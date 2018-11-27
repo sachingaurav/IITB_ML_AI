@@ -1,0 +1,1213 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{4\_Slicing\_Dicing}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \section{Slicing and Dicing
+Dataframes}\label{slicing-and-dicing-dataframes}
+
+You have seen how to do indexing of dataframes using \texttt{df.iloc}
+and \texttt{df.loc}. Now, let's see how to subset dataframes based on
+certain conditions.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{c+c1}{\PYZsh{} loading libraries and reading the data}
+         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+         
+         \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{../global\PYZus{}sales\PYZus{}data/market\PYZus{}fact.csv}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:}      Ord\_id  Prod\_id   Ship\_id    Cust\_id    Sales  Discount  Order\_Quantity  \textbackslash{}
+         0  Ord\_5446  Prod\_16  SHP\_7609  Cust\_1818   136.81      0.01              23   
+         1  Ord\_5406  Prod\_13  SHP\_7549  Cust\_1818    42.27      0.01              13   
+         2  Ord\_5446   Prod\_4  SHP\_7610  Cust\_1818  4701.69      0.00              26   
+         3  Ord\_5456   Prod\_6  SHP\_7625  Cust\_1818  2337.89      0.09              43   
+         4  Ord\_5485  Prod\_17  SHP\_7664  Cust\_1818  4233.15      0.08              35   
+         
+             Profit  Shipping\_Cost  Product\_Base\_Margin  
+         0   -30.51           3.60                 0.56  
+         1     4.56           0.93                 0.54  
+         2  1148.90           2.50                 0.59  
+         3   729.34          14.30                 0.37  
+         4  1219.87          26.30                 0.38  
+\end{Verbatim}
+            
+    \subsubsection{Subsetting Rows Based on
+Conditions}\label{subsetting-rows-based-on-conditions}
+
+Often, you want to select rows which satisfy some given conditions. For
+e.g., select all the orders where the
+\texttt{Sales\ \textgreater{}\ 3000}, or all the orders where
+\texttt{2000\ \textless{}\ Sales\ \textless{}\ 3000} and
+\texttt{Profit\ \textless{}\ 100}.
+
+Arguably, the best way to do these operations is using
+\texttt{df.loc{[}{]}}, since \texttt{df.iloc{[}{]}} would require you to
+remember the integer column indices, which is tedious.
+
+Let's see some examples.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{c+c1}{\PYZsh{} Select all rows where Sales \PYZgt{} 3000}
+         \PY{c+c1}{\PYZsh{} First, we get a boolean array where True corresponds to rows having Sales \PYZgt{} 3000}
+         \PY{n}{df}\PY{o}{.}\PY{n}{Sales} \PY{o}{\PYZgt{}} \PY{l+m+mi}{3000}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}11}]:} 0       False
+         1       False
+         2        True
+         3       False
+         4        True
+         5       False
+         6       False
+         7        True
+         8       False
+         9       False
+         10       True
+         11      False
+         12      False
+         13       True
+         14      False
+         15      False
+         16      False
+         17       True
+         18      False
+         19      False
+         20      False
+         21      False
+         22       True
+         23      False
+         24      False
+         25      False
+         26      False
+         27      False
+         28       True
+         29      False
+                 {\ldots}  
+         8369    False
+         8370    False
+         8371     True
+         8372    False
+         8373    False
+         8374    False
+         8375    False
+         8376    False
+         8377    False
+         8378    False
+         8379    False
+         8380    False
+         8381    False
+         8382    False
+         8383     True
+         8384    False
+         8385    False
+         8386    False
+         8387    False
+         8388    False
+         8389    False
+         8390    False
+         8391    False
+         8392    False
+         8393    False
+         8394    False
+         8395    False
+         8396    False
+         8397     True
+         8398    False
+         Name: Sales, Length: 8399, dtype: bool
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{c+c1}{\PYZsh{} Then, we pass this boolean array inside df.loc}
+         \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{df}\PY{o}{.}\PY{n}{Sales} \PY{o}{\PYZgt{}} \PY{l+m+mi}{3000}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}12}]:}         Ord\_id  Prod\_id   Ship\_id    Cust\_id       Sales  Discount  \textbackslash{}
+         2     Ord\_5446   Prod\_4  SHP\_7610  Cust\_1818   4701.6900      0.00   
+         4     Ord\_5485  Prod\_17  SHP\_7664  Cust\_1818   4233.1500      0.08   
+         7     Ord\_4725   Prod\_4  SHP\_6593  Cust\_1641   3410.1575      0.10   
+         10    Ord\_4743   Prod\_2  SHP\_6615  Cust\_1641   4072.0100      0.01   
+         13    Ord\_2207  Prod\_11  SHP\_3093   Cust\_839   3364.2480      0.10   
+         17    Ord\_4471  Prod\_15  SHP\_6228  Cust\_1521  13255.9300      0.02   
+         22     Ord\_996   Prod\_5  SHP\_1377   Cust\_371   3202.2500      0.09   
+         28    Ord\_2573   Prod\_4  SHP\_3527   Cust\_931   3594.7435      0.05   
+         40    Ord\_5035  Prod\_15  SHP\_7024  Cust\_1710   4917.6900      0.02   
+         57    Ord\_4546   Prod\_1  SHP\_6327  Cust\_1474   5208.7800      0.05   
+         64    Ord\_4475   Prod\_4  SHP\_6234  Cust\_1474   7640.2250      0.07   
+         79    Ord\_5188  Prod\_14  SHP\_7252  Cust\_1749   5177.4000      0.06   
+         82    Ord\_5156   Prod\_4  SHP\_7207  Cust\_1749   8374.1320      0.06   
+         84    Ord\_5232  Prod\_17  SHP\_7306  Cust\_1758  21366.5100      0.00   
+         107    Ord\_250  Prod\_15   SHP\_346    Cust\_45   8901.7800      0.04   
+         121   Ord\_5423  Prod\_17  SHP\_7577  Cust\_1800  13070.2000      0.07   
+         124   Ord\_2432   Prod\_4  SHP\_3339   Cust\_933   3883.4715      0.10   
+         133   Ord\_2432   Prod\_3  SHP\_3338   Cust\_933  15337.5800      0.10   
+         148   Ord\_1649   Prod\_2  SHP\_2277   Cust\_498   3005.7400      0.02   
+         163   Ord\_4646  Prod\_15  SHP\_6475  Cust\_1603   4083.1900      0.07   
+         164   Ord\_4646   Prod\_1  SHP\_6476  Cust\_1603   4902.3800      0.05   
+         165   Ord\_4702   Prod\_3  SHP\_6560  Cust\_1603  11823.5200      0.10   
+         168   Ord\_2973   Prod\_4  SHP\_4102  Cust\_1081   4671.1495      0.07   
+         169   Ord\_3009  Prod\_15  SHP\_4168  Cust\_1081   5718.8500      0.09   
+         170   Ord\_2973   Prod\_4  SHP\_4102  Cust\_1480   6264.1855      0.01   
+         171   Ord\_2973   Prod\_9  SHP\_6073  Cust\_1480   5410.9500      0.09   
+         183   Ord\_5157  Prod\_15  SHP\_7208  Cust\_1753   5149.0600      0.03   
+         185   Ord\_5153  Prod\_11  SHP\_7202  Cust\_1753   3457.5600      0.02   
+         189   Ord\_2831   Prod\_3  SHP\_3893  Cust\_1036  18092.6600      0.09   
+         191   Ord\_2791  Prod\_11  SHP\_3838  Cust\_1036  10351.0100      0.08   
+         {\ldots}        {\ldots}      {\ldots}       {\ldots}        {\ldots}         {\ldots}       {\ldots}   
+         8125  Ord\_4515   Prod\_1  SHP\_6285  Cust\_1546   4976.6000      0.06   
+         8137  Ord\_2267   Prod\_2  SHP\_3089   Cust\_890   6608.2400      0.09   
+         8141  Ord\_3368  Prod\_15  SHP\_4668  Cust\_1190   3227.3800      0.05   
+         8143  Ord\_3265   Prod\_1  SHP\_4530  Cust\_1190  10330.9400      0.07   
+         8151  Ord\_3214   Prod\_2  SHP\_4456  Cust\_1187   8316.7600      0.05   
+         8158  Ord\_2868  Prod\_15  SHP\_3950  Cust\_1059   5405.4400      0.07   
+         8207  Ord\_3433   Prod\_8  SHP\_4759  Cust\_1180   3601.0700      0.04   
+         8210  Ord\_2110  Prod\_17  SHP\_2885   Cust\_802   4502.2600      0.09   
+         8211  Ord\_2144   Prod\_1  SHP\_2925   Cust\_802   5318.8900      0.06   
+         8217  Ord\_3359  Prod\_10  SHP\_7245  Cust\_1762  28389.1400      0.07   
+         8219  Ord\_5200   Prod\_4  SHP\_7266  Cust\_1762   4815.8620      0.08   
+         8235   Ord\_759   Prod\_5  SHP\_1036   Cust\_245   8549.0400      0.03   
+         8240   Ord\_793  Prod\_11  SHP\_1090   Cust\_245   4452.6500      0.09   
+         8249  Ord\_3470  Prod\_17  SHP\_4805  Cust\_1203   5615.4000      0.07   
+         8263  Ord\_4954  Prod\_15  SHP\_6913  Cust\_1694   7987.4300      0.03   
+         8283  Ord\_1741  Prod\_11  SHP\_2411   Cust\_595  15168.8200      0.02   
+         8286  Ord\_1749   Prod\_1  SHP\_2424   Cust\_595   5176.2700      0.01   
+         8292  Ord\_1765  Prod\_14  SHP\_2446   Cust\_595  14647.2600      0.07   
+         8298  Ord\_2172   Prod\_1  SHP\_2960   Cust\_787   6648.5800      0.08   
+         8308  Ord\_2659   Prod\_8  SHP\_3638  Cust\_1016   4744.6400      0.04   
+         8317  Ord\_2770   Prod\_3  SHP\_3802  Cust\_1016   7535.9600      0.08   
+         8329  Ord\_2160  Prod\_15  SHP\_2944   Cust\_810   3636.3700      0.06   
+         8332  Ord\_2101  Prod\_11  SHP\_2875   Cust\_790  10714.7800      0.00   
+         8335  Ord\_2070  Prod\_11  SHP\_2833   Cust\_784   3905.7500      0.01   
+         8343  Ord\_2178   Prod\_4  SHP\_2968   Cust\_785   6030.5800      0.09   
+         8366  Ord\_3593   Prod\_3  SHP\_4974  Cust\_1274  12073.0600      0.03   
+         8367  Ord\_3593  Prod\_15  SHP\_4975  Cust\_1274   6685.0500      0.09   
+         8371  Ord\_2624   Prod\_4  SHP\_3591  Cust\_1006   4924.1350      0.07   
+         8383  Ord\_2722   Prod\_1  SHP\_3731  Cust\_1006   3508.3300      0.04   
+         8397  Ord\_5348  Prod\_15  SHP\_7469  Cust\_1798   3872.8700      0.03   
+         
+               Order\_Quantity    Profit  Shipping\_Cost  Product\_Base\_Margin  
+         2                 26   1148.90           2.50                 0.59  
+         4                 35   1219.87          26.30                 0.38  
+         7                 48   1137.91           0.99                 0.55  
+         10                43   1675.98           0.99                 0.56  
+         13                15   -693.23          61.76                 0.78  
+         17                25   4089.27          26.00                 0.60  
+         22                44    991.26          19.99                 0.43  
+         28                38   1016.97           2.50                 0.55  
+         40                42    126.31          30.00                 0.71  
+         57                34   1547.78           7.07                 0.59  
+         64                46   2027.68           2.50                 0.59  
+         79                12    287.50          49.00                 0.38  
+         82                48   2568.10           8.99                 0.56  
+         84                 3 -11984.40          24.49                 0.39  
+         107               31   2795.36          24.49                  NaN  
+         121                4  -6923.60           8.73                 0.57  
+         124               42    707.17           8.99                 0.58  
+         133               30   6670.41          19.99                 0.37  
+         148               48   1053.21           3.99                 0.57  
+         163               43  -1049.85          45.00                 0.69  
+         164               32   1438.49           7.07                 0.59  
+         165               34   4592.74          19.99                 0.40  
+         168               28    947.31           4.20                 0.59  
+         169               49  -2426.55          70.20                 0.74  
+         170               34   1312.04          19.99                 0.60  
+         171               36   2077.91          19.99                 0.39  
+         183               27    605.44          30.00                 0.69  
+         185               35   -365.44          51.94                 0.63  
+         189               36   7917.76          19.99                 0.37  
+         191               19  -1331.55          45.70                 0.71  
+         {\ldots}              {\ldots}       {\ldots}            {\ldots}                  {\ldots}  
+         8125              32    601.88          19.99                 0.66  
+         8137              35   2164.64           0.99                 0.55  
+         8141              26    192.31          30.00                 0.64  
+         8143              25   2914.56          19.99                 0.58  
+         8151              30   2108.80          23.19                 0.59  
+         8158              18    604.46          64.73                 0.56  
+         8207              50    174.80          14.52                 0.65  
+         8210              38   1272.17          26.30                 0.38  
+         8211              48    525.15           8.64                 0.78  
+         8217              33   7132.18          44.55                 0.62  
+         8219              47   1316.79           4.20                 0.57  
+         8235              42   2861.01          11.54                 0.59  
+         8240              30   -265.12          60.00                 0.55  
+         8249              46   1807.16          26.30                 0.38  
+         8263              49   1304.90          30.00                 0.62  
+         8283              26  -1096.78         147.12                 0.80  
+         8286              38   -743.45          35.00                 0.84  
+         8292              25   5485.15          24.49                 0.37  
+         8298              19   -555.98          99.00                 0.65  
+         8308              46   1033.38          19.99                 0.52  
+         8317              46   2745.87          19.99                 0.40  
+         8329              33   -176.91          30.00                 0.69  
+         8332              41   -627.64          66.67                 0.65  
+         8335              21     55.30          29.21                 0.76  
+         8343              39   1197.86           8.99                 0.58  
+         8366              39   5081.87          19.99                 0.38  
+         8367              25   1653.60          24.49                  NaN  
+         8371              28   1049.54           8.99                 0.58  
+         8383              21   -546.98          35.00                 0.85  
+         8397              23    565.34          30.00                 0.62  
+         
+         [1359 rows x 10 columns]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{c+c1}{\PYZsh{} An alternative to df.Sales is df[\PYZsq{}Sales]}
+         \PY{c+c1}{\PYZsh{} You may want to put the : to indicate that you want all columns}
+         \PY{c+c1}{\PYZsh{} It is more explicit }
+         \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sales}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZgt{}} \PY{l+m+mi}{3000}\PY{p}{,} \PY{p}{:}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}13}]:}         Ord\_id  Prod\_id   Ship\_id    Cust\_id       Sales  Discount  \textbackslash{}
+         2     Ord\_5446   Prod\_4  SHP\_7610  Cust\_1818   4701.6900      0.00   
+         4     Ord\_5485  Prod\_17  SHP\_7664  Cust\_1818   4233.1500      0.08   
+         7     Ord\_4725   Prod\_4  SHP\_6593  Cust\_1641   3410.1575      0.10   
+         10    Ord\_4743   Prod\_2  SHP\_6615  Cust\_1641   4072.0100      0.01   
+         13    Ord\_2207  Prod\_11  SHP\_3093   Cust\_839   3364.2480      0.10   
+         17    Ord\_4471  Prod\_15  SHP\_6228  Cust\_1521  13255.9300      0.02   
+         22     Ord\_996   Prod\_5  SHP\_1377   Cust\_371   3202.2500      0.09   
+         28    Ord\_2573   Prod\_4  SHP\_3527   Cust\_931   3594.7435      0.05   
+         40    Ord\_5035  Prod\_15  SHP\_7024  Cust\_1710   4917.6900      0.02   
+         57    Ord\_4546   Prod\_1  SHP\_6327  Cust\_1474   5208.7800      0.05   
+         64    Ord\_4475   Prod\_4  SHP\_6234  Cust\_1474   7640.2250      0.07   
+         79    Ord\_5188  Prod\_14  SHP\_7252  Cust\_1749   5177.4000      0.06   
+         82    Ord\_5156   Prod\_4  SHP\_7207  Cust\_1749   8374.1320      0.06   
+         84    Ord\_5232  Prod\_17  SHP\_7306  Cust\_1758  21366.5100      0.00   
+         107    Ord\_250  Prod\_15   SHP\_346    Cust\_45   8901.7800      0.04   
+         121   Ord\_5423  Prod\_17  SHP\_7577  Cust\_1800  13070.2000      0.07   
+         124   Ord\_2432   Prod\_4  SHP\_3339   Cust\_933   3883.4715      0.10   
+         133   Ord\_2432   Prod\_3  SHP\_3338   Cust\_933  15337.5800      0.10   
+         148   Ord\_1649   Prod\_2  SHP\_2277   Cust\_498   3005.7400      0.02   
+         163   Ord\_4646  Prod\_15  SHP\_6475  Cust\_1603   4083.1900      0.07   
+         164   Ord\_4646   Prod\_1  SHP\_6476  Cust\_1603   4902.3800      0.05   
+         165   Ord\_4702   Prod\_3  SHP\_6560  Cust\_1603  11823.5200      0.10   
+         168   Ord\_2973   Prod\_4  SHP\_4102  Cust\_1081   4671.1495      0.07   
+         169   Ord\_3009  Prod\_15  SHP\_4168  Cust\_1081   5718.8500      0.09   
+         170   Ord\_2973   Prod\_4  SHP\_4102  Cust\_1480   6264.1855      0.01   
+         171   Ord\_2973   Prod\_9  SHP\_6073  Cust\_1480   5410.9500      0.09   
+         183   Ord\_5157  Prod\_15  SHP\_7208  Cust\_1753   5149.0600      0.03   
+         185   Ord\_5153  Prod\_11  SHP\_7202  Cust\_1753   3457.5600      0.02   
+         189   Ord\_2831   Prod\_3  SHP\_3893  Cust\_1036  18092.6600      0.09   
+         191   Ord\_2791  Prod\_11  SHP\_3838  Cust\_1036  10351.0100      0.08   
+         {\ldots}        {\ldots}      {\ldots}       {\ldots}        {\ldots}         {\ldots}       {\ldots}   
+         8125  Ord\_4515   Prod\_1  SHP\_6285  Cust\_1546   4976.6000      0.06   
+         8137  Ord\_2267   Prod\_2  SHP\_3089   Cust\_890   6608.2400      0.09   
+         8141  Ord\_3368  Prod\_15  SHP\_4668  Cust\_1190   3227.3800      0.05   
+         8143  Ord\_3265   Prod\_1  SHP\_4530  Cust\_1190  10330.9400      0.07   
+         8151  Ord\_3214   Prod\_2  SHP\_4456  Cust\_1187   8316.7600      0.05   
+         8158  Ord\_2868  Prod\_15  SHP\_3950  Cust\_1059   5405.4400      0.07   
+         8207  Ord\_3433   Prod\_8  SHP\_4759  Cust\_1180   3601.0700      0.04   
+         8210  Ord\_2110  Prod\_17  SHP\_2885   Cust\_802   4502.2600      0.09   
+         8211  Ord\_2144   Prod\_1  SHP\_2925   Cust\_802   5318.8900      0.06   
+         8217  Ord\_3359  Prod\_10  SHP\_7245  Cust\_1762  28389.1400      0.07   
+         8219  Ord\_5200   Prod\_4  SHP\_7266  Cust\_1762   4815.8620      0.08   
+         8235   Ord\_759   Prod\_5  SHP\_1036   Cust\_245   8549.0400      0.03   
+         8240   Ord\_793  Prod\_11  SHP\_1090   Cust\_245   4452.6500      0.09   
+         8249  Ord\_3470  Prod\_17  SHP\_4805  Cust\_1203   5615.4000      0.07   
+         8263  Ord\_4954  Prod\_15  SHP\_6913  Cust\_1694   7987.4300      0.03   
+         8283  Ord\_1741  Prod\_11  SHP\_2411   Cust\_595  15168.8200      0.02   
+         8286  Ord\_1749   Prod\_1  SHP\_2424   Cust\_595   5176.2700      0.01   
+         8292  Ord\_1765  Prod\_14  SHP\_2446   Cust\_595  14647.2600      0.07   
+         8298  Ord\_2172   Prod\_1  SHP\_2960   Cust\_787   6648.5800      0.08   
+         8308  Ord\_2659   Prod\_8  SHP\_3638  Cust\_1016   4744.6400      0.04   
+         8317  Ord\_2770   Prod\_3  SHP\_3802  Cust\_1016   7535.9600      0.08   
+         8329  Ord\_2160  Prod\_15  SHP\_2944   Cust\_810   3636.3700      0.06   
+         8332  Ord\_2101  Prod\_11  SHP\_2875   Cust\_790  10714.7800      0.00   
+         8335  Ord\_2070  Prod\_11  SHP\_2833   Cust\_784   3905.7500      0.01   
+         8343  Ord\_2178   Prod\_4  SHP\_2968   Cust\_785   6030.5800      0.09   
+         8366  Ord\_3593   Prod\_3  SHP\_4974  Cust\_1274  12073.0600      0.03   
+         8367  Ord\_3593  Prod\_15  SHP\_4975  Cust\_1274   6685.0500      0.09   
+         8371  Ord\_2624   Prod\_4  SHP\_3591  Cust\_1006   4924.1350      0.07   
+         8383  Ord\_2722   Prod\_1  SHP\_3731  Cust\_1006   3508.3300      0.04   
+         8397  Ord\_5348  Prod\_15  SHP\_7469  Cust\_1798   3872.8700      0.03   
+         
+               Order\_Quantity    Profit  Shipping\_Cost  Product\_Base\_Margin  
+         2                 26   1148.90           2.50                 0.59  
+         4                 35   1219.87          26.30                 0.38  
+         7                 48   1137.91           0.99                 0.55  
+         10                43   1675.98           0.99                 0.56  
+         13                15   -693.23          61.76                 0.78  
+         17                25   4089.27          26.00                 0.60  
+         22                44    991.26          19.99                 0.43  
+         28                38   1016.97           2.50                 0.55  
+         40                42    126.31          30.00                 0.71  
+         57                34   1547.78           7.07                 0.59  
+         64                46   2027.68           2.50                 0.59  
+         79                12    287.50          49.00                 0.38  
+         82                48   2568.10           8.99                 0.56  
+         84                 3 -11984.40          24.49                 0.39  
+         107               31   2795.36          24.49                  NaN  
+         121                4  -6923.60           8.73                 0.57  
+         124               42    707.17           8.99                 0.58  
+         133               30   6670.41          19.99                 0.37  
+         148               48   1053.21           3.99                 0.57  
+         163               43  -1049.85          45.00                 0.69  
+         164               32   1438.49           7.07                 0.59  
+         165               34   4592.74          19.99                 0.40  
+         168               28    947.31           4.20                 0.59  
+         169               49  -2426.55          70.20                 0.74  
+         170               34   1312.04          19.99                 0.60  
+         171               36   2077.91          19.99                 0.39  
+         183               27    605.44          30.00                 0.69  
+         185               35   -365.44          51.94                 0.63  
+         189               36   7917.76          19.99                 0.37  
+         191               19  -1331.55          45.70                 0.71  
+         {\ldots}              {\ldots}       {\ldots}            {\ldots}                  {\ldots}  
+         8125              32    601.88          19.99                 0.66  
+         8137              35   2164.64           0.99                 0.55  
+         8141              26    192.31          30.00                 0.64  
+         8143              25   2914.56          19.99                 0.58  
+         8151              30   2108.80          23.19                 0.59  
+         8158              18    604.46          64.73                 0.56  
+         8207              50    174.80          14.52                 0.65  
+         8210              38   1272.17          26.30                 0.38  
+         8211              48    525.15           8.64                 0.78  
+         8217              33   7132.18          44.55                 0.62  
+         8219              47   1316.79           4.20                 0.57  
+         8235              42   2861.01          11.54                 0.59  
+         8240              30   -265.12          60.00                 0.55  
+         8249              46   1807.16          26.30                 0.38  
+         8263              49   1304.90          30.00                 0.62  
+         8283              26  -1096.78         147.12                 0.80  
+         8286              38   -743.45          35.00                 0.84  
+         8292              25   5485.15          24.49                 0.37  
+         8298              19   -555.98          99.00                 0.65  
+         8308              46   1033.38          19.99                 0.52  
+         8317              46   2745.87          19.99                 0.40  
+         8329              33   -176.91          30.00                 0.69  
+         8332              41   -627.64          66.67                 0.65  
+         8335              21     55.30          29.21                 0.76  
+         8343              39   1197.86           8.99                 0.58  
+         8366              39   5081.87          19.99                 0.38  
+         8367              25   1653.60          24.49                  NaN  
+         8371              28   1049.54           8.99                 0.58  
+         8383              21   -546.98          35.00                 0.85  
+         8397              23    565.34          30.00                 0.62  
+         
+         [1359 rows x 10 columns]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{c+c1}{\PYZsh{} We combine multiple conditions using the \PYZam{} operator}
+         \PY{c+c1}{\PYZsh{} E.g. all orders having 2000 \PYZlt{} Sales \PYZlt{} 3000 and Profit \PYZgt{} 100}
+         \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{Sales} \PY{o}{\PYZgt{}} \PY{l+m+mi}{2000}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{Sales} \PY{o}{\PYZlt{}} \PY{l+m+mi}{3000}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{Profit} \PY{o}{\PYZgt{}} \PY{l+m+mi}{100}\PY{p}{)}\PY{p}{,} \PY{p}{:}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}14}]:}         Ord\_id  Prod\_id   Ship\_id    Cust\_id      Sales  Discount  \textbackslash{}
+         3     Ord\_5456   Prod\_6  SHP\_7625  Cust\_1818  2337.8900      0.09   
+         81    Ord\_5205   Prod\_4  SHP\_7274  Cust\_1749  2546.5235      0.09   
+         109    Ord\_139  Prod\_17   SHP\_186    Cust\_45  2671.2100      0.06   
+         110    Ord\_239   Prod\_4   SHP\_332    Cust\_45  2157.3085      0.00   
+         141   Ord\_1673  Prod\_17  SHP\_2314   Cust\_498  2027.5500      0.04   
+         146   Ord\_1649   Prod\_4  SHP\_2278   Cust\_498  2209.5155      0.06   
+         176   Ord\_2273   Prod\_8  SHP\_3101   Cust\_878  2899.9800      0.10   
+         184   Ord\_5230   Prod\_4  SHP\_7304  Cust\_1753  2197.4115      0.00   
+         186   Ord\_5159   Prod\_5  SHP\_7210  Cust\_1753  2213.9200      0.03   
+         230    Ord\_657   Prod\_4   SHP\_899   Cust\_209  2343.0760      0.06   
+         285   Ord\_1607   Prod\_4  SHP\_2220   Cust\_506  2980.3720      0.02   
+         314   Ord\_1521  Prod\_15  SHP\_2100   Cust\_560  2230.9700      0.06   
+         349   Ord\_4896   Prod\_4  SHP\_6829  Cust\_1674  2827.1425      0.01   
+         395   Ord\_4144   Prod\_2  SHP\_5772  Cust\_1418  2182.9100      0.10   
+         404   Ord\_1621   Prod\_3  SHP\_2238   Cust\_566  2010.8900      0.09   
+         510   Ord\_3848   Prod\_4  SHP\_5335  Cust\_1346  2660.6105      0.03   
+         522    Ord\_142   Prod\_8   SHP\_191    Cust\_51  2689.4800      0.04   
+         536   Ord\_4909   Prod\_2  SHP\_6846   Cust\_227  2180.2300      0.05   
+         541   Ord\_4935   Prod\_4  SHP\_6886  Cust\_1680  2292.1015      0.02   
+         647   Ord\_4292   Prod\_5  SHP\_5988  Cust\_1439  2758.2200      0.00   
+         680    Ord\_674   Prod\_4   SHP\_922   Cust\_212  2404.5990      0.08   
+         688   Ord\_4904   Prod\_1  SHP\_6841  Cust\_1682  2257.8800      0.01   
+         718   Ord\_2069   Prod\_4  SHP\_2832   Cust\_783  2135.9735      0.07   
+         720   Ord\_2150   Prod\_4  SHP\_2932   Cust\_805  2773.0315      0.04   
+         729   Ord\_4826   Prod\_3  SHP\_6724  Cust\_1588  2168.0500      0.00   
+         767   Ord\_2054   Prod\_2  SHP\_2808   Cust\_828  2192.6300      0.05   
+         775   Ord\_5154   Prod\_4  SHP\_7204  Cust\_1746  2610.8940      0.00   
+         783   Ord\_2666   Prod\_4  SHP\_3652  Cust\_1017  2368.1680      0.00   
+         809   Ord\_4279   Prod\_1  SHP\_5971  Cust\_1440  2752.6800      0.04   
+         810   Ord\_4269   Prod\_2  SHP\_5958  Cust\_1440  2405.0000      0.10   
+         {\ldots}        {\ldots}      {\ldots}       {\ldots}        {\ldots}        {\ldots}       {\ldots}   
+         7777  Ord\_3414   Prod\_2  SHP\_4733  Cust\_1196  2167.0500      0.02   
+         7778  Ord\_3363   Prod\_6  SHP\_4663  Cust\_1196  2040.3900      0.07   
+         7788  Ord\_2482   Prod\_4  SHP\_3399   Cust\_977  2252.2620      0.10   
+         7811  Ord\_3215   Prod\_4  SHP\_4458  Cust\_1188  2080.0350      0.10   
+         7823  Ord\_4370   Prod\_9  SHP\_6092  Cust\_1492  2325.4200      0.02   
+         7858  Ord\_3232   Prod\_3  SHP\_4483  Cust\_1200  2206.1700      0.02   
+         7875  Ord\_1762  Prod\_17  SHP\_2443   Cust\_577  2287.1000      0.07   
+         7877  Ord\_1748   Prod\_4  SHP\_2421   Cust\_577  2503.3265      0.04   
+         7884   Ord\_710   Prod\_4   SHP\_973   Cust\_244  2529.3960      0.06   
+         7911  Ord\_5012   Prod\_4  SHP\_6993  Cust\_1693  2882.7070      0.02   
+         7927  Ord\_2502   Prod\_4  SHP\_3430   Cust\_976  2104.9910      0.09   
+         7940  Ord\_3277   Prod\_4  SHP\_4550  Cust\_1224  2185.9535      0.10   
+         7973  Ord\_1694   Prod\_6  SHP\_2346   Cust\_582  2145.0500      0.07   
+         7986  Ord\_4788   Prod\_4  SHP\_6674  Cust\_1583  2478.4810      0.09   
+         8045  Ord\_5443   Prod\_8  SHP\_7605  Cust\_1803  2587.5300      0.02   
+         8048   Ord\_796   Prod\_5  SHP\_1095   Cust\_247  2780.8800      0.07   
+         8061  Ord\_2020   Prod\_2  SHP\_3104   Cust\_892  2550.1200      0.01   
+         8071  Ord\_5350   Prod\_4  SHP\_7473  Cust\_1795  2750.1070      0.00   
+         8147  Ord\_3214   Prod\_4  SHP\_4457  Cust\_1187  2143.2155      0.02   
+         8152  Ord\_3337   Prod\_2  SHP\_4630  Cust\_1187  2477.9900      0.00   
+         8239   Ord\_793   Prod\_9  SHP\_1089   Cust\_245  2833.1900      0.06   
+         8262  Ord\_4954   Prod\_4  SHP\_6914  Cust\_1694  2455.2760      0.04   
+         8271  Ord\_4679   Prod\_4  SHP\_6528  Cust\_1587  2823.0370      0.10   
+         8289  Ord\_1749   Prod\_4  SHP\_2422   Cust\_595  2731.7300      0.07   
+         8304  Ord\_2709  Prod\_11  SHP\_3709  Cust\_1025  2272.5600      0.06   
+         8338  Ord\_2107   Prod\_2  SHP\_2882   Cust\_785  2409.9600      0.07   
+         8350  Ord\_3570   Prod\_4  SHP\_4942  Cust\_1266  2094.9780      0.06   
+         8354  Ord\_3592   Prod\_4  SHP\_4973  Cust\_1266  2614.3705      0.07   
+         8381  Ord\_2696   Prod\_4  SHP\_3691  Cust\_1006  2836.0505      0.01   
+         8394  Ord\_5353   Prod\_4  SHP\_7479  Cust\_1798  2841.4395      0.08   
+         
+               Order\_Quantity   Profit  Shipping\_Cost  Product\_Base\_Margin  
+         3                 43   729.34          14.30                 0.37  
+         81                26   210.00           7.69                 0.59  
+         109               14   636.18          15.59                 0.36  
+         110               38   519.25           5.31                 0.57  
+         141               14   537.40          13.99                 0.37  
+         146               41   458.62           5.31                 0.57  
+         176               19   666.01           5.50                 0.49  
+         184               20   305.96           7.69                 0.58  
+         186               20   768.34          13.99                 0.65  
+         230               24   311.64           8.99                 0.58  
+         285               19   494.63           8.99                 0.57  
+         314               12   273.27          26.20                 0.59  
+         349               35   713.88           4.90                 0.56  
+         395               40   549.45           3.50                 0.57  
+         404               34   564.07          11.55                 0.38  
+         510               46   618.07           8.99                 0.56  
+         522               27   399.93          19.99                 0.50  
+         536               37   660.25           3.50                 0.57  
+         541               21   398.36           3.00                 0.59  
+         647               15   966.81          13.99                 0.75  
+         680               45   496.89           4.99                 0.58  
+         688               38   474.98           9.71                 0.57  
+         718               40   239.40           8.99                 0.59  
+         720               38   897.87           0.99                 0.55  
+         729                5   416.02          19.99                 0.35  
+         767               37   660.06           3.99                 0.57  
+         775               23   516.19           5.63                 0.60  
+         783               30  1181.30           1.25                 0.39  
+         809               45   430.32          12.78                 0.58  
+         810               39   696.17           0.99                 0.58  
+         {\ldots}              {\ldots}      {\ldots}            {\ldots}                  {\ldots}  
+         7777              36   684.90           3.50                 0.57  
+         7778              50   221.09          19.99                 0.36  
+         7788              42   478.11           5.63                 0.56  
+         7811              31   844.90           1.25                 0.39  
+         7823              25   739.91          19.99                 0.40  
+         7858               4   251.43          19.99                 0.37  
+         7875              23   231.49          19.99                 0.52  
+         7877              45   447.12           8.80                 0.58  
+         7884              25   371.21           3.00                 0.59  
+         7911              16   303.23           5.00                 0.59  
+         7927              20   165.45           8.80                 0.59  
+         7940              21   268.01           8.99                 0.55  
+         7973              45  1012.67           5.86                 0.35  
+         7986              27   249.10           8.99                 0.58  
+         8045              44   401.85           6.55                 0.68  
+         8048              27   595.38          24.49                 0.61  
+         8061              40   882.45           4.50                 0.56  
+         8071              24   600.42           7.69                 0.58  
+         8147              37   464.36           8.99                 0.55  
+         8152              30   747.68           4.50                 0.59  
+         8239              34  1409.87           5.01                 0.38  
+         8262              42   693.06           5.63                 0.56  
+         8271              29   372.40           4.20                 0.59  
+         8289              21   310.59           8.99                 0.58  
+         8304              15   111.05          16.01                 0.70  
+         8338              32   575.10           4.50                 0.59  
+         8350              44   697.29           1.25                 0.55  
+         8354              25   384.01           7.69                 0.58  
+         8381              25   561.13           8.99                 0.59  
+         8394              28   374.63           7.69                 0.59  
+         
+         [328 rows x 10 columns]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{c+c1}{\PYZsh{} The \PYZsq{}OR\PYZsq{} operator is represented by a | (Note that \PYZsq{}or\PYZsq{} doesn\PYZsq{}t work with pandas)}
+         \PY{c+c1}{\PYZsh{} E.g. all orders having 2000 \PYZlt{} Sales  OR Profit \PYZgt{} 100}
+         \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{Sales} \PY{o}{\PYZgt{}} \PY{l+m+mi}{2000}\PY{p}{)} \PY{o}{|} \PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{Profit} \PY{o}{\PYZgt{}} \PY{l+m+mi}{100}\PY{p}{)}\PY{p}{,} \PY{p}{:}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}15}]:}         Ord\_id  Prod\_id   Ship\_id    Cust\_id       Sales  Discount  \textbackslash{}
+         2     Ord\_5446   Prod\_4  SHP\_7610  Cust\_1818   4701.6900      0.00   
+         3     Ord\_5456   Prod\_6  SHP\_7625  Cust\_1818   2337.8900      0.09   
+         4     Ord\_5485  Prod\_17  SHP\_7664  Cust\_1818   4233.1500      0.08   
+         7     Ord\_4725   Prod\_4  SHP\_6593  Cust\_1641   3410.1575      0.10   
+         10    Ord\_4743   Prod\_2  SHP\_6615  Cust\_1641   4072.0100      0.01   
+         13    Ord\_2207  Prod\_11  SHP\_3093   Cust\_839   3364.2480      0.10   
+         16    Ord\_2282   Prod\_9  SHP\_3122   Cust\_839    443.4600      0.06   
+         17    Ord\_4471  Prod\_15  SHP\_6228  Cust\_1521  13255.9300      0.02   
+         22     Ord\_996   Prod\_5  SHP\_1377   Cust\_371   3202.2500      0.09   
+         27    Ord\_2405   Prod\_9  SHP\_3300   Cust\_931   1062.6900      0.01   
+         28    Ord\_2573   Prod\_4  SHP\_3527   Cust\_931   3594.7435      0.05   
+         37    Ord\_5040   Prod\_2  SHP\_7032  Cust\_1710   1637.7800      0.08   
+         38    Ord\_5035  Prod\_12  SHP\_7025  Cust\_1710    416.8000      0.01   
+         39    Ord\_5045   Prod\_5  SHP\_7040  Cust\_1710   1286.8700      0.05   
+         40    Ord\_5035  Prod\_15  SHP\_7024  Cust\_1710   4917.6900      0.02   
+         47    Ord\_4659   Prod\_6  SHP\_6493  Cust\_1579   1451.5900      0.06   
+         54    Ord\_4682   Prod\_4  SHP\_6531  Cust\_1579   1909.0065      0.01   
+         56    Ord\_4410   Prod\_5  SHP\_6146  Cust\_1474    605.7700      0.05   
+         57    Ord\_4546   Prod\_1  SHP\_6327  Cust\_1474   5208.7800      0.05   
+         62    Ord\_4410   Prod\_6  SHP\_6146  Cust\_1474   1480.9100      0.00   
+         64    Ord\_4475   Prod\_4  SHP\_6234  Cust\_1474   7640.2250      0.07   
+         70    Ord\_4607   Prod\_2  SHP\_6408  Cust\_1474   1463.4200      0.08   
+         77    Ord\_5213  Prod\_13  SHP\_7284  Cust\_1749   1633.3700      0.08   
+         79    Ord\_5188  Prod\_14  SHP\_7252  Cust\_1749   5177.4000      0.06   
+         81    Ord\_5205   Prod\_4  SHP\_7274  Cust\_1749   2546.5235      0.09   
+         82    Ord\_5156   Prod\_4  SHP\_7207  Cust\_1749   8374.1320      0.06   
+         84    Ord\_5232  Prod\_17  SHP\_7306  Cust\_1758  21366.5100      0.00   
+         88    Ord\_5172   Prod\_4  SHP\_7229  Cust\_1758   1239.4445      0.07   
+         98    Ord\_5481  Prod\_15  SHP\_7659  Cust\_1820   2700.7800      0.06   
+         102   Ord\_1557   Prod\_2  SHP\_2152   Cust\_565   1736.5300      0.10   
+         {\ldots}        {\ldots}      {\ldots}       {\ldots}        {\ldots}         {\ldots}       {\ldots}   
+         8328  Ord\_2169   Prod\_6  SHP\_2956   Cust\_810   1321.5500      0.10   
+         8329  Ord\_2160  Prod\_15  SHP\_2944   Cust\_810   3636.3700      0.06   
+         8331  Ord\_2148  Prod\_10  SHP\_2929   Cust\_810   2966.1300      0.08   
+         8332  Ord\_2101  Prod\_11  SHP\_2875   Cust\_790  10714.7800      0.00   
+         8334  Ord\_2124   Prod\_3  SHP\_2900   Cust\_790    926.8500      0.09   
+         8335  Ord\_2070  Prod\_11  SHP\_2833   Cust\_784   3905.7500      0.01   
+         8338  Ord\_2107   Prod\_2  SHP\_2882   Cust\_785   2409.9600      0.07   
+         8342  Ord\_2119   Prod\_2  SHP\_2895   Cust\_785   1623.0900      0.02   
+         8343  Ord\_2178   Prod\_4  SHP\_2968   Cust\_785   6030.5800      0.09   
+         8344  Ord\_2194   Prod\_5  SHP\_2991   Cust\_785    525.7800      0.03   
+         8347  Ord\_3534   Prod\_4  SHP\_4894  Cust\_1266   1735.3515      0.08   
+         8350  Ord\_3570   Prod\_4  SHP\_4942  Cust\_1266   2094.9780      0.06   
+         8351  Ord\_3584  Prod\_15  SHP\_4961  Cust\_1266   2502.6700      0.10   
+         8354  Ord\_3592   Prod\_4  SHP\_4973  Cust\_1266   2614.3705      0.07   
+         8358  Ord\_3582   Prod\_6  SHP\_4959  Cust\_1266    539.6600      0.00   
+         8359  Ord\_3543   Prod\_3  SHP\_4906  Cust\_1266    514.2200      0.02   
+         8360  Ord\_3639  Prod\_10  SHP\_5038  Cust\_1266   2173.2600      0.00   
+         8362  Ord\_3593   Prod\_5  SHP\_4975  Cust\_1274   1175.5300      0.03   
+         8366  Ord\_3593   Prod\_3  SHP\_4974  Cust\_1274  12073.0600      0.03   
+         8367  Ord\_3593  Prod\_15  SHP\_4975  Cust\_1274   6685.0500      0.09   
+         8369  Ord\_3633   Prod\_3  SHP\_5031  Cust\_1274   1169.2600      0.02   
+         8371  Ord\_2624   Prod\_4  SHP\_3591  Cust\_1006   4924.1350      0.07   
+         8375  Ord\_2772   Prod\_3  SHP\_3806  Cust\_1006   1413.8200      0.10   
+         8378  Ord\_2706   Prod\_2  SHP\_3705  Cust\_1006   1361.9100      0.05   
+         8381  Ord\_2696   Prod\_4  SHP\_3691  Cust\_1006   2836.0505      0.01   
+         8383  Ord\_2722   Prod\_1  SHP\_3731  Cust\_1006   3508.3300      0.04   
+         8385  Ord\_1833   Prod\_3  SHP\_2527   Cust\_637    611.1600      0.04   
+         8394  Ord\_5353   Prod\_4  SHP\_7479  Cust\_1798   2841.4395      0.08   
+         8397  Ord\_5348  Prod\_15  SHP\_7469  Cust\_1798   3872.8700      0.03   
+         8398  Ord\_5459   Prod\_6  SHP\_7628  Cust\_1798    603.6900      0.00   
+         
+               Order\_Quantity    Profit  Shipping\_Cost  Product\_Base\_Margin  
+         2                 26   1148.90           2.50                 0.59  
+         3                 43    729.34          14.30                 0.37  
+         4                 35   1219.87          26.30                 0.38  
+         7                 48   1137.91           0.99                 0.55  
+         10                43   1675.98           0.99                 0.56  
+         13                15   -693.23          61.76                 0.78  
+         16                30    193.12           1.39                 0.38  
+         17                25   4089.27          26.00                 0.60  
+         22                44    991.26          19.99                 0.43  
+         27                28    401.80           6.66                 0.40  
+         28                38   1016.97           2.50                 0.55  
+         37                38    461.65           4.62                 0.56  
+         38                32    223.38           0.50                 0.38  
+         39                48    384.38           6.93                 0.49  
+         40                42    126.31          30.00                 0.71  
+         47                26    435.11          14.30                 0.37  
+         54                32    344.13           8.99                 0.59  
+         56                42    129.33           5.00                 0.49  
+         57                34   1547.78           7.07                 0.59  
+         62                44    489.14           8.74                 0.40  
+         64                46   2027.68           2.50                 0.59  
+         70                26    350.82           3.99                 0.57  
+         77                50    144.69           7.73                 0.59  
+         79                12    287.50          49.00                 0.38  
+         81                26    210.00           7.69                 0.59  
+         82                48   2568.10           8.99                 0.56  
+         84                 3 -11984.40          24.49                 0.39  
+         88                22    165.50           3.99                 0.59  
+         98                29   -793.36          58.20                 0.58  
+         102               46    457.03           3.99                 0.56  
+         {\ldots}              {\ldots}       {\ldots}            {\ldots}                  {\ldots}  
+         8328              25    448.24          10.75                 0.36  
+         8329              33   -176.91          30.00                 0.69  
+         8331              31  -1456.31          57.38                 0.78  
+         8332              41   -627.64          66.67                 0.65  
+         8334              34    382.94           1.49                 0.38  
+         8335              21     55.30          29.21                 0.76  
+         8338              32    575.10           4.50                 0.59  
+         8342              28    245.88          13.22                 0.56  
+         8343              39   1197.86           8.99                 0.58  
+         8344              20    180.64           6.93                 0.49  
+         8347              31    258.62           8.99                 0.56  
+         8350              44    697.29           1.25                 0.55  
+         8351               9   -198.80          64.73                 0.56  
+         8354              25    384.01           7.69                 0.58  
+         8358              26    147.08           5.97                 0.38  
+         8359              17    187.37           2.99                 0.35  
+         8360              35   -465.66          36.61                 0.61  
+         8362              18    257.59          14.48                 0.46  
+         8366              39   5081.87          19.99                 0.38  
+         8367              25   1653.60          24.49                  NaN  
+         8369              41    515.62           1.49                 0.38  
+         8371              28   1049.54           8.99                 0.58  
+         8375              47    226.53          11.63                 0.37  
+         8378              20    312.52           3.50                 0.59  
+         8381              25    561.13           8.99                 0.59  
+         8383              21   -546.98          35.00                 0.85  
+         8385              46    100.22           4.98                 0.40  
+         8394              28    374.63           7.69                 0.59  
+         8397              23    565.34          30.00                 0.62  
+         8398              47    131.39           4.86                 0.38  
+         
+         [3009 rows x 10 columns]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{c+c1}{\PYZsh{} E.g. all orders having 2000 \PYZlt{} Sales \PYZlt{} 3000 and Profit \PYZgt{} 100}
+         \PY{c+c1}{\PYZsh{} Also, this time, you only need the Cust\PYZus{}id, Sales and Profit columns}
+         \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{Sales} \PY{o}{\PYZgt{}} \PY{l+m+mi}{2000}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{Sales} \PY{o}{\PYZlt{}} \PY{l+m+mi}{3000}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{Profit} \PY{o}{\PYZgt{}} \PY{l+m+mi}{100}\PY{p}{)}\PY{p}{,} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cust\PYZus{}id}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sales}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Profit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}16}]:}         Cust\_id      Sales   Profit
+         3     Cust\_1818  2337.8900   729.34
+         81    Cust\_1749  2546.5235   210.00
+         109     Cust\_45  2671.2100   636.18
+         110     Cust\_45  2157.3085   519.25
+         141    Cust\_498  2027.5500   537.40
+         146    Cust\_498  2209.5155   458.62
+         176    Cust\_878  2899.9800   666.01
+         184   Cust\_1753  2197.4115   305.96
+         186   Cust\_1753  2213.9200   768.34
+         230    Cust\_209  2343.0760   311.64
+         285    Cust\_506  2980.3720   494.63
+         314    Cust\_560  2230.9700   273.27
+         349   Cust\_1674  2827.1425   713.88
+         395   Cust\_1418  2182.9100   549.45
+         404    Cust\_566  2010.8900   564.07
+         510   Cust\_1346  2660.6105   618.07
+         522     Cust\_51  2689.4800   399.93
+         536    Cust\_227  2180.2300   660.25
+         541   Cust\_1680  2292.1015   398.36
+         647   Cust\_1439  2758.2200   966.81
+         680    Cust\_212  2404.5990   496.89
+         688   Cust\_1682  2257.8800   474.98
+         718    Cust\_783  2135.9735   239.40
+         720    Cust\_805  2773.0315   897.87
+         729   Cust\_1588  2168.0500   416.02
+         767    Cust\_828  2192.6300   660.06
+         775   Cust\_1746  2610.8940   516.19
+         783   Cust\_1017  2368.1680  1181.30
+         809   Cust\_1440  2752.6800   430.32
+         810   Cust\_1440  2405.0000   696.17
+         {\ldots}         {\ldots}        {\ldots}      {\ldots}
+         7777  Cust\_1196  2167.0500   684.90
+         7778  Cust\_1196  2040.3900   221.09
+         7788   Cust\_977  2252.2620   478.11
+         7811  Cust\_1188  2080.0350   844.90
+         7823  Cust\_1492  2325.4200   739.91
+         7858  Cust\_1200  2206.1700   251.43
+         7875   Cust\_577  2287.1000   231.49
+         7877   Cust\_577  2503.3265   447.12
+         7884   Cust\_244  2529.3960   371.21
+         7911  Cust\_1693  2882.7070   303.23
+         7927   Cust\_976  2104.9910   165.45
+         7940  Cust\_1224  2185.9535   268.01
+         7973   Cust\_582  2145.0500  1012.67
+         7986  Cust\_1583  2478.4810   249.10
+         8045  Cust\_1803  2587.5300   401.85
+         8048   Cust\_247  2780.8800   595.38
+         8061   Cust\_892  2550.1200   882.45
+         8071  Cust\_1795  2750.1070   600.42
+         8147  Cust\_1187  2143.2155   464.36
+         8152  Cust\_1187  2477.9900   747.68
+         8239   Cust\_245  2833.1900  1409.87
+         8262  Cust\_1694  2455.2760   693.06
+         8271  Cust\_1587  2823.0370   372.40
+         8289   Cust\_595  2731.7300   310.59
+         8304  Cust\_1025  2272.5600   111.05
+         8338   Cust\_785  2409.9600   575.10
+         8350  Cust\_1266  2094.9780   697.29
+         8354  Cust\_1266  2614.3705   384.01
+         8381  Cust\_1006  2836.0505   561.13
+         8394  Cust\_1798  2841.4395   374.63
+         
+         [328 rows x 3 columns]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{c+c1}{\PYZsh{} You can use the == and != operators }
+         \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{Sales} \PY{o}{==} \PY{l+m+mf}{4233.15}\PY{p}{)}\PY{p}{,} \PY{p}{:}\PY{p}{]}
+         \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{Sales} \PY{o}{!=} \PY{l+m+mi}{1000}\PY{p}{)}\PY{p}{,} \PY{p}{:}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}17}]:}         Ord\_id  Prod\_id   Ship\_id    Cust\_id       Sales  Discount  \textbackslash{}
+         0     Ord\_5446  Prod\_16  SHP\_7609  Cust\_1818    136.8100      0.01   
+         1     Ord\_5406  Prod\_13  SHP\_7549  Cust\_1818     42.2700      0.01   
+         2     Ord\_5446   Prod\_4  SHP\_7610  Cust\_1818   4701.6900      0.00   
+         3     Ord\_5456   Prod\_6  SHP\_7625  Cust\_1818   2337.8900      0.09   
+         4     Ord\_5485  Prod\_17  SHP\_7664  Cust\_1818   4233.1500      0.08   
+         5     Ord\_5446   Prod\_6  SHP\_7608  Cust\_1818    164.0200      0.03   
+         6       Ord\_31  Prod\_12    SHP\_41    Cust\_26     14.7600      0.01   
+         7     Ord\_4725   Prod\_4  SHP\_6593  Cust\_1641   3410.1575      0.10   
+         8     Ord\_4725  Prod\_13  SHP\_6593  Cust\_1641    162.0000      0.01   
+         9     Ord\_4725   Prod\_6  SHP\_6593  Cust\_1641     57.2200      0.07   
+         10    Ord\_4743   Prod\_2  SHP\_6615  Cust\_1641   4072.0100      0.01   
+         11    Ord\_1925   Prod\_6  SHP\_2637   Cust\_708    465.9000      0.05   
+         12    Ord\_2978  Prod\_16  SHP\_4112  Cust\_1088    305.0500      0.04   
+         13    Ord\_2207  Prod\_11  SHP\_3093   Cust\_839   3364.2480      0.10   
+         14    Ord\_2207  Prod\_10  SHP\_3006   Cust\_839   1410.9300      0.08   
+         15    Ord\_2280   Prod\_5  SHP\_3114   Cust\_839    460.6900      0.06   
+         16    Ord\_2282   Prod\_9  SHP\_3122   Cust\_839    443.4600      0.06   
+         17    Ord\_4471  Prod\_15  SHP\_6228  Cust\_1521  13255.9300      0.02   
+         18    Ord\_4427   Prod\_6  SHP\_6171  Cust\_1521    283.1300      0.08   
+         19     Ord\_996  Prod\_13  SHP\_1378   Cust\_371     41.9700      0.05   
+         20     Ord\_996  Prod\_13  SHP\_1378   Cust\_371     57.1700      0.08   
+         21     Ord\_996   Prod\_6  SHP\_1378   Cust\_371     81.2500      0.01   
+         22     Ord\_996   Prod\_5  SHP\_1377   Cust\_371   3202.2500      0.09   
+         23     Ord\_996   Prod\_7  SHP\_1378   Cust\_371     35.6400      0.05   
+         24    Ord\_2573   Prod\_3  SHP\_3525   Cust\_931    197.6100      0.08   
+         25    Ord\_2335  Prod\_13  SHP\_3204   Cust\_931     38.2600      0.03   
+         26    Ord\_2456   Prod\_5  SHP\_3367   Cust\_931    109.5800      0.00   
+         27    Ord\_2405   Prod\_9  SHP\_3300   Cust\_931   1062.6900      0.01   
+         28    Ord\_2573   Prod\_4  SHP\_3527   Cust\_931   3594.7435      0.05   
+         29    Ord\_2478  Prod\_12  SHP\_3395   Cust\_931    139.9800      0.07   
+         {\ldots}        {\ldots}      {\ldots}       {\ldots}        {\ldots}         {\ldots}       {\ldots}   
+         8369  Ord\_3633   Prod\_3  SHP\_5031  Cust\_1274   1169.2600      0.02   
+         8370  Ord\_2696  Prod\_13  SHP\_3690  Cust\_1006     62.7800      0.04   
+         8371  Ord\_2624   Prod\_4  SHP\_3591  Cust\_1006   4924.1350      0.07   
+         8372  Ord\_2772   Prod\_9  SHP\_3806  Cust\_1006     56.9000      0.03   
+         8373  Ord\_2600  Prod\_16  SHP\_3560  Cust\_1006    106.6400      0.10   
+         8374  Ord\_2658   Prod\_5  SHP\_3637  Cust\_1006   1082.6600      0.08   
+         8375  Ord\_2772   Prod\_3  SHP\_3806  Cust\_1006   1413.8200      0.10   
+         8376  Ord\_2624   Prod\_8  SHP\_3590  Cust\_1006   1211.0000      0.00   
+         8377  Ord\_2722  Prod\_12  SHP\_3729  Cust\_1006     34.0100      0.00   
+         8378  Ord\_2706   Prod\_2  SHP\_3705  Cust\_1006   1361.9100      0.05   
+         8379  Ord\_2722   Prod\_5  SHP\_3730  Cust\_1006   1008.9500      0.04   
+         8380  Ord\_2772   Prod\_6  SHP\_3807  Cust\_1006    308.9200      0.04   
+         8381  Ord\_2696   Prod\_4  SHP\_3691  Cust\_1006   2836.0505      0.01   
+         8382  Ord\_2658   Prod\_3  SHP\_3636  Cust\_1006    120.9800      0.00   
+         8383  Ord\_2722   Prod\_1  SHP\_3731  Cust\_1006   3508.3300      0.04   
+         8384  Ord\_4620   Prod\_3  SHP\_6435  Cust\_1577     59.6200      0.04   
+         8385  Ord\_1833   Prod\_3  SHP\_2527   Cust\_637    611.1600      0.04   
+         8386  Ord\_2324   Prod\_7  SHP\_3189   Cust\_851    121.8700      0.07   
+         8387  Ord\_2220   Prod\_3  SHP\_3019   Cust\_851     41.0600      0.04   
+         8388  Ord\_4424   Prod\_1  SHP\_6165  Cust\_1519    994.0400      0.03   
+         8389  Ord\_4444  Prod\_13  SHP\_6192  Cust\_1519    159.4100      0.00   
+         8390  Ord\_5435  Prod\_16  SHP\_7594  Cust\_1798    316.9900      0.04   
+         8391  Ord\_5435   Prod\_4  SHP\_7594  Cust\_1798   1991.8985      0.07   
+         8392  Ord\_5384   Prod\_9  SHP\_7519  Cust\_1798    181.5000      0.08   
+         8393  Ord\_5348   Prod\_8  SHP\_7470  Cust\_1798    356.7200      0.07   
+         8394  Ord\_5353   Prod\_4  SHP\_7479  Cust\_1798   2841.4395      0.08   
+         8395  Ord\_5411   Prod\_6  SHP\_7555  Cust\_1798    127.1600      0.10   
+         8396  Ord\_5388   Prod\_6  SHP\_7524  Cust\_1798    243.0500      0.02   
+         8397  Ord\_5348  Prod\_15  SHP\_7469  Cust\_1798   3872.8700      0.03   
+         8398  Ord\_5459   Prod\_6  SHP\_7628  Cust\_1798    603.6900      0.00   
+         
+               Order\_Quantity   Profit  Shipping\_Cost  Product\_Base\_Margin  
+         0                 23   -30.51           3.60                 0.56  
+         1                 13     4.56           0.93                 0.54  
+         2                 26  1148.90           2.50                 0.59  
+         3                 43   729.34          14.30                 0.37  
+         4                 35  1219.87          26.30                 0.38  
+         5                 23   -47.64           6.15                 0.37  
+         6                  5     1.32           0.50                 0.36  
+         7                 48  1137.91           0.99                 0.55  
+         8                 33    45.84           0.71                 0.52  
+         9                  8   -27.72           6.60                 0.37  
+         10                43  1675.98           0.99                 0.56  
+         11                38    79.34           4.86                 0.38  
+         12                27    23.12           3.37                 0.57  
+         13                15  -693.23          61.76                 0.78  
+         14                10  -317.48          36.09                 0.77  
+         15                48  -103.48           7.29                 0.45  
+         16                30   193.12           1.39                 0.38  
+         17                25  4089.27          26.00                 0.60  
+         18                45  -141.26           6.81                 0.36  
+         19                12   -37.03           4.20                 0.56  
+         20                18   -24.03           2.31                 0.56  
+         21                11   -44.54           7.86                 0.37  
+         22                44   991.26          19.99                 0.43  
+         23                10    -0.71           1.63                 0.36  
+         24                13     3.46           7.27                 0.38  
+         25                22    -2.34           0.70                 0.56  
+         26                13    31.32           4.00                 0.42  
+         27                28   401.80           6.66                 0.40  
+         28                38  1016.97           2.50                 0.55  
+         29                33  -140.54           6.89                 0.39  
+         {\ldots}              {\ldots}      {\ldots}            {\ldots}                  {\ldots}  
+         8369              41   515.62           1.49                 0.38  
+         8370              20   -17.75           2.03                 0.57  
+         8371              28  1049.54           8.99                 0.58  
+         8372               7    12.64           1.39                 0.36  
+         8373              30   -31.95           1.32                 0.83  
+         8374              14  -256.93          48.20                 0.74  
+         8375              47   226.53          11.63                 0.37  
+         8376              36   -27.99           6.50                 0.79  
+         8377              12    10.58           0.50                 0.39  
+         8378              20   312.52           3.50                 0.59  
+         8379              41    69.31           8.99                 0.50  
+         8380              45  -143.58           7.37                 0.37  
+         8381              25   561.13           8.99                 0.59  
+         8382              28   -92.85           5.34                 0.38  
+         8383              21  -546.98          35.00                 0.85  
+         8384              10   -56.30           7.78                 0.37  
+         8385              46   100.22           4.98                 0.40  
+         8386              39    11.32           1.35                 0.40  
+         8387               4   -16.39           6.28                 0.35  
+         8388              10  -335.06          35.00                  NaN  
+         8389              44    34.68           0.98                 0.52  
+         8390              47  -276.54           8.37                 0.58  
+         8391              20    88.36           7.69                 0.58  
+         8392              43    -6.24           2.50                 0.37  
+         8393               9    12.61           1.99                 0.44  
+         8394              28   374.63           7.69                 0.59  
+         8395              20   -74.03           6.92                 0.37  
+         8396              39   -70.85           5.35                 0.40  
+         8397              23   565.34          30.00                 0.62  
+         8398              47   131.39           4.86                 0.38  
+         
+         [8399 rows x 10 columns]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{c+c1}{\PYZsh{} You may want to select rows whose column value is in an iterable}
+         \PY{c+c1}{\PYZsh{} For instance, say a colleague gives you a list of customer\PYZus{}ids from a certain region}
+         
+         \PY{n}{customers\PYZus{}in\PYZus{}bangalore} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cust\PYZus{}1798}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cust\PYZus{}1519}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cust\PYZus{}637}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cust\PYZus{}851}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         
+         \PY{c+c1}{\PYZsh{} To get all the orders from these customers, use the isin() function}
+         \PY{c+c1}{\PYZsh{} It returns a boolean, which you can use to select rows}
+         \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cust\PYZus{}id}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{isin}\PY{p}{(}\PY{n}{customers\PYZus{}in\PYZus{}bangalore}\PY{p}{)}\PY{p}{,} \PY{p}{:}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}18}]:}         Ord\_id  Prod\_id   Ship\_id    Cust\_id      Sales  Discount  \textbackslash{}
+         8385  Ord\_1833   Prod\_3  SHP\_2527   Cust\_637   611.1600      0.04   
+         8386  Ord\_2324   Prod\_7  SHP\_3189   Cust\_851   121.8700      0.07   
+         8387  Ord\_2220   Prod\_3  SHP\_3019   Cust\_851    41.0600      0.04   
+         8388  Ord\_4424   Prod\_1  SHP\_6165  Cust\_1519   994.0400      0.03   
+         8389  Ord\_4444  Prod\_13  SHP\_6192  Cust\_1519   159.4100      0.00   
+         8390  Ord\_5435  Prod\_16  SHP\_7594  Cust\_1798   316.9900      0.04   
+         8391  Ord\_5435   Prod\_4  SHP\_7594  Cust\_1798  1991.8985      0.07   
+         8392  Ord\_5384   Prod\_9  SHP\_7519  Cust\_1798   181.5000      0.08   
+         8393  Ord\_5348   Prod\_8  SHP\_7470  Cust\_1798   356.7200      0.07   
+         8394  Ord\_5353   Prod\_4  SHP\_7479  Cust\_1798  2841.4395      0.08   
+         8395  Ord\_5411   Prod\_6  SHP\_7555  Cust\_1798   127.1600      0.10   
+         8396  Ord\_5388   Prod\_6  SHP\_7524  Cust\_1798   243.0500      0.02   
+         8397  Ord\_5348  Prod\_15  SHP\_7469  Cust\_1798  3872.8700      0.03   
+         8398  Ord\_5459   Prod\_6  SHP\_7628  Cust\_1798   603.6900      0.00   
+         
+               Order\_Quantity  Profit  Shipping\_Cost  Product\_Base\_Margin  
+         8385              46  100.22           4.98                 0.40  
+         8386              39   11.32           1.35                 0.40  
+         8387               4  -16.39           6.28                 0.35  
+         8388              10 -335.06          35.00                  NaN  
+         8389              44   34.68           0.98                 0.52  
+         8390              47 -276.54           8.37                 0.58  
+         8391              20   88.36           7.69                 0.58  
+         8392              43   -6.24           2.50                 0.37  
+         8393               9   12.61           1.99                 0.44  
+         8394              28  374.63           7.69                 0.59  
+         8395              20  -74.03           6.92                 0.37  
+         8396              39  -70.85           5.35                 0.40  
+         8397              23  565.34          30.00                 0.62  
+         8398              47  131.39           4.86                 0.38  
+\end{Verbatim}
+            
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
