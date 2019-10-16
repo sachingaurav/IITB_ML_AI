@@ -1,0 +1,2730 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "goodbye",
+        "text": "bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "goodbye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "good bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "stop"
+      },
+      {
+        "intent": "goodbye",
+        "text": "end"
+      },
+      {
+        "intent": "goodbye",
+        "text": "farewell"
+      },
+      {
+        "intent": "goodbye",
+        "text": "Bye bye"
+      },
+      {
+        "intent": "goodbye",
+        "text": "have a good one"
+      },
+      {
+        "intent": "greet",
+        "text": "hey"
+      },
+      {
+        "intent": "greet",
+        "text": "howdy"
+      },
+      {
+        "intent": "greet",
+        "text": "hey there"
+      },
+      {
+        "intent": "greet",
+        "text": "hello"
+      },
+      {
+        "intent": "greet",
+        "text": "hi"
+      },
+      {
+        "intent": "greet",
+        "text": "Namaste"
+      },
+      {
+        "intent": "greet",
+        "text": "good morning"
+      },
+      {
+        "intent": "greet",
+        "text": "good evening"
+      },
+      {
+        "intent": "greet",
+        "text": "dear sir"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "low",
+            "entity": "budget"
+          }
+        ],
+        "text": "Low"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "medium",
+            "entity": "budget"
+          }
+        ],
+        "text": "Medium"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "high",
+            "entity": "budget"
+          }
+        ],
+        "text": "High"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "low",
+            "entity": "budget"
+          }
+        ],
+        "text": "low"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "medium",
+            "entity": "budget"
+          }
+        ],
+        "text": "medium"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "high",
+            "entity": "budget"
+          }
+        ],
+        "text": "high"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "low",
+            "entity": "budget"
+          }
+        ],
+        "text": "low budget"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 13,
+            "value": "medium",
+            "entity": "budget"
+          }
+        ],
+        "text": "medium budget"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 11,
+            "value": "high",
+            "entity": "budget"
+          }
+        ],
+        "text": "high budget"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "low",
+            "entity": "budget"
+          }
+        ],
+        "text": "LOW."
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "medium",
+            "entity": "budget"
+          }
+        ],
+        "text": "MEDIUM."
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "high",
+            "entity": "budget"
+          }
+        ],
+        "text": "HIGH."
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "low",
+            "entity": "budget"
+          }
+        ],
+        "text": "low."
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "medium",
+            "entity": "budget"
+          }
+        ],
+        "text": "medium."
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "high",
+            "entity": "budget"
+          }
+        ],
+        "text": "high."
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 17,
+            "value": "low",
+            "entity": "budget"
+          }
+        ],
+        "text": "Less than Rs. 300"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "high",
+            "entity": "budget"
+          }
+        ],
+        "text": "higher than 700"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 14,
+            "value": "low",
+            "entity": "budget"
+          }
+        ],
+        "text": "lower than 300"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "medium",
+            "entity": "budget"
+          }
+        ],
+        "text": "Range of 300 to 700"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "high",
+            "entity": "budget"
+          }
+        ],
+        "text": "Higher than 700"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "medium",
+            "entity": "budget"
+          }
+        ],
+        "text": "Between 300 and 700"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "high",
+            "entity": "budget"
+          }
+        ],
+        "text": "> 700"
+      },
+      {
+        "intent": "budget_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "low",
+            "entity": "budget"
+          }
+        ],
+        "text": "< 300"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "South Indian",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "South Indian"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "North Indian",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "North Indian"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "Italian",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "Italian"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "Chinese"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "chinese"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "mexican",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "Mexican"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "mexican",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "mexican"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "american",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "American"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "american",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "american"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "american",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "American delicacies"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "Italian",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "Italian flavour"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "Chinese cuisine"
+      },
+      {
+        "intent": "cuisine_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "chinese food"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 12,
+            "value": "Hyderabad",
+            "entity": "location"
+          }
+        ],
+        "text": "In Hyderabad"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "Delhi",
+            "entity": "location"
+          }
+        ],
+        "text": "In Delhi."
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "Chennai",
+            "entity": "location"
+          }
+        ],
+        "text": "In Chennai"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "PATNA",
+            "entity": "location"
+          }
+        ],
+        "text": "In PATNA"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "PATNA",
+            "entity": "location"
+          }
+        ],
+        "text": "in PATNA"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 9,
+            "value": "ShiMLA",
+            "entity": "location"
+          }
+        ],
+        "text": "In ShiMLA"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "chennai",
+            "entity": "location"
+          }
+        ],
+        "text": "in chennai"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 14,
+            "end": 19,
+            "value": "Italy",
+            "entity": "location"
+          }
+        ],
+        "text": "Oh, sorry, in Italy"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "delhi",
+            "entity": "location"
+          }
+        ],
+        "text": "in delhi"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "Delhi",
+            "entity": "location"
+          }
+        ],
+        "text": "In Delhi"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "Delhi",
+            "entity": "location"
+          }
+        ],
+        "text": "In Delhi."
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 7,
+            "value": "rome",
+            "entity": "location"
+          }
+        ],
+        "text": "in rome"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 12,
+            "value": "bangalore",
+            "entity": "location"
+          }
+        ],
+        "text": "IN bangalore"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "vegas",
+            "entity": "location"
+          }
+        ],
+        "text": "iN vegas"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 11,
+            "value": "visakhapatnam",
+            "entity": "location"
+          }
+        ],
+        "text": "In Sholapur"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 16,
+            "value": "Visakhapatnam",
+            "entity": "location"
+          }
+        ],
+        "text": "in Visakhapatnam"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 9,
+            "value": "Mumbai",
+            "entity": "location"
+          }
+        ],
+        "text": "In Mumbai"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "Jodhpur",
+            "entity": "location"
+          }
+        ],
+        "text": "In Jodhpur"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 8,
+            "value": "patna",
+            "entity": "location"
+          }
+        ],
+        "text": "in Patna"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 11,
+            "value": "calcutta",
+            "entity": "location"
+          }
+        ],
+        "text": "In calcutta"
+      },
+      {
+        "intent": "location_prompt",
+        "entities": [
+          {
+            "start": 3,
+            "end": 10,
+            "value": "gangtok",
+            "entity": "location"
+          }
+        ],
+        "text": "in gangtok"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "why not"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "please"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "sure"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "yes"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "yeah"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "ok"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "y"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "Why Not"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 11,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "YES, Please"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "SURE"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "Yes"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "Yeah"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "OK"
+      },
+      {
+        "intent": "confirm_email_prompt",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "value": "yes",
+            "entity": "confirm_email_prompt"
+          }
+        ],
+        "text": "Y"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 18,
+            "value": "purnendu@gmail.com",
+            "entity": "email"
+          }
+        ],
+        "text": "purnendu@gmail.com"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 14,
+            "value": "atul@iiitb.net",
+            "entity": "email"
+          }
+        ],
+        "text": "atul@iiitb.net"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 18,
+            "value": "atul.k@yahoo.co.in",
+            "entity": "email"
+          }
+        ],
+        "text": "atul.k@yahoo.co.in"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 18,
+            "value": "sachin@yahoo.co.in",
+            "entity": "email"
+          }
+        ],
+        "text": "sachin@yahoo.co.in"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 17,
+            "value": "sachin@target.com",
+            "entity": "email"
+          }
+        ],
+        "text": "sachin@target.com"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 20,
+            "value": "purnendu@gmail.co.in",
+            "entity": "email"
+          }
+        ],
+        "text": "purnendu@gmail.co.in"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 17,
+            "value": "atul@iiitb.net.in",
+            "entity": "email"
+          }
+        ],
+        "text": "atul@iiitb.net.in"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 18,
+            "value": "atul.k@email.co.uk",
+            "entity": "email"
+          }
+        ],
+        "text": "atul.k@yahoo.co.uk"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 18,
+            "value": "sachin@email.co.in",
+            "entity": "email"
+          }
+        ],
+        "text": "sachin@email.co.in"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "sachin@target.co.in",
+            "entity": "email"
+          }
+        ],
+        "text": "sachin@target.co.in"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 18,
+            "value": "atul@sigmainfo.net",
+            "entity": "email"
+          }
+        ],
+        "text": "atul@sigmainfo.net"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 22,
+            "value": "purnendu@sigmainfo.net",
+            "entity": "email"
+          }
+        ],
+        "text": "purnendu@sigmainfo.net"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 26,
+            "value": "purnendu@happiestminds.com",
+            "entity": "email"
+          }
+        ],
+        "text": "purnendu@happiestminds.com"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 18,
+            "value": "samrat@outlook.com",
+            "entity": "email"
+          }
+        ],
+        "text": "samrat@outlook.com"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 16,
+            "value": "samrat@gmail.com",
+            "entity": "email"
+          }
+        ],
+        "text": "samrat@gmail.com"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 22,
+            "value": "purnendu@sigmainfo.net",
+            "entity": "email"
+          }
+        ],
+        "text": "purnendu@sigmainfo.net"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 32,
+            "value": "purnendu.ban@happiestminds.co.in",
+            "entity": "email"
+          }
+        ],
+        "text": "purnendu.ban@happiestminds.co.in"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 20,
+            "value": "samrat@outlook.co.uk",
+            "entity": "email"
+          }
+        ],
+        "text": "samrat@outlook.co.uk"
+      },
+      {
+        "intent": "email_fetch",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "samrat@outlook.fr",
+            "entity": "email"
+          }
+        ],
+        "text": "samrat@outlook.fr"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "i'm looking for a place to eat"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "I want to grab lunch"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "I am searching for a dinner spot"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 31,
+            "end": 36,
+            "value": "north",
+            "entity": "location"
+          }
+        ],
+        "text": "i'm looking for a place in the north of town"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 15,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "show me chinese restaurants"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 14,
+            "value": "chinese",
+            "entity": "cuisine"
+          },
+          {
+            "start": 34,
+            "end": 39,
+            "value": "north",
+            "entity": "location"
+          }
+        ],
+        "text": "show me chines restaurants in the north"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 31,
+            "end": 37,
+            "value": "centre",
+            "entity": "location"
+          },
+          {
+            "start": 10,
+            "end": 17,
+            "value": "mexican",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "show me a mexican place in the centre"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 19,
+            "end": 31,
+            "value": "north indian",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "i am looking for a north indian spot called olaolaolaolaolaola"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 21,
+            "end": 40,
+            "value": "north indian",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "i am searching for a south indian eatery"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "search for restaurant"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "restaurant"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "restaurant"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "get me restaurant"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "find me restaurant"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "find restaurant"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "search restaurant"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "check restaurant"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "look for restaurant"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 16,
+            "end": 20,
+            "value": "west",
+            "entity": "location"
+          }
+        ],
+        "text": "anywhere in the west"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 14,
+            "end": 19,
+            "value": "18328",
+            "entity": "location"
+          }
+        ],
+        "text": "anywhere near 18328"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 29,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "I am looking for asian fusion food"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 29,
+            "end": 35,
+            "value": "560048",
+            "entity": "location"
+          }
+        ],
+        "text": "I am looking a restaurant in 560048"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 15,
+            "value": "Chennai",
+            "entity": "location"
+          }
+        ],
+        "text": "Find me Chennai eateries."
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 7,
+            "end": 14,
+            "value": "chinese",
+            "entity": "cuisine"
+          },
+          {
+            "start": 25,
+            "end": 30,
+            "value": "Poona",
+            "entity": "location"
+          }
+        ],
+        "text": "I want chinese hotels in Poona."
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 7,
+            "end": 20,
+            "value": "medium",
+            "entity": "budget"
+          },
+          {
+            "start": 21,
+            "end": 28,
+            "value": "mexican",
+            "entity": "cuisine"
+          },
+          {
+            "start": 44,
+            "end": 52,
+            "value": "calcutta",
+            "entity": "location"
+          }
+        ],
+        "text": "I need medium priced mexican restaurants in calcutta."
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 19,
+            "value": "high",
+            "entity": "budget"
+          },
+          {
+            "start": 20,
+            "end": 32,
+            "value": "south indian",
+            "entity": "cuisine"
+          },
+          {
+            "start": 43,
+            "end": 49,
+            "value": "mumbai",
+            "entity": "location"
+          }
+        ],
+        "text": "Find me beyond high south indian hotels in mumbai."
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 37,
+            "end": 42,
+            "value": "Delhi",
+            "entity": "location"
+          }
+        ],
+        "text": "I am looking for some restaurants in Delhi."
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 37,
+            "end": 42,
+            "value": "Salem",
+            "entity": "location"
+          }
+        ],
+        "text": "I am looking for some restaurants in Salem"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 37,
+            "end": 44,
+            "value": "jodhpur",
+            "entity": "location"
+          }
+        ],
+        "text": "I am looking for some restaurants in jodhpur"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 38,
+            "value": "mexican",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "I am looking for mexican indian fusion"
+      },
+      {
+        "intent": "restaurant_search",
+        "text": "central indian restaurant"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 38,
+            "end": 42,
+            "value": "pune",
+            "entity": "location"
+          }
+        ],
+        "text": "please help me to find restaurants in pune"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 23,
+            "end": 32,
+            "value": "bangalore",
+            "entity": "location"
+          },
+          {
+            "start": 38,
+            "end": 45,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "show me restaurants in bangalore with chinese cuisine"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 8,
+            "end": 16,
+            "value": "american",
+            "entity": "cuisine"
+          },
+          {
+            "start": 25,
+            "end": 31,
+            "value": "bhopal",
+            "entity": "location"
+          }
+        ],
+        "text": "show me american food in bhopal"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 30,
+            "end": 34,
+            "value": "1000",
+            "entity": "budget"
+          },
+          {
+            "start": 38,
+            "end": 45,
+            "value": "gangtok",
+            "entity": "location"
+          }
+        ],
+        "text": "tell me food places less than 1000 in gangtok"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "mexican",
+            "entity": "cuisine"
+          },
+          {
+            "start": 33,
+            "end": 42,
+            "value": "bangalore",
+            "entity": "location"
+          },
+          {
+            "start": 65,
+            "end": 68,
+            "value": "500",
+            "entity": "budget"
+          }
+        ],
+        "text": "i am looking for mexican food in bangalore which is greater than 500 for two"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 19,
+            "end": 22,
+            "value": "500",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "food for less than 500"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 15,
+            "end": 24,
+            "value": "bangalore",
+            "entity": "location"
+          },
+          {
+            "start": 54,
+            "end": 57,
+            "value": "700",
+            "entity": "budget"
+          }
+        ],
+        "text": "restaurants in bangalore that offer food greater than 700"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "chinese",
+            "entity": "cuisine"
+          },
+          {
+            "start": 40,
+            "end": 43,
+            "value": "600",
+            "entity": "budget"
+          }
+        ],
+        "text": "food places with chinese food less than 600"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 12,
+            "end": 24,
+            "value": "north indian",
+            "entity": "cuisine"
+          },
+          {
+            "start": 33,
+            "end": 42,
+            "value": "ahmedabad",
+            "entity": "location"
+          },
+          {
+            "start": 50,
+            "end": 53,
+            "value": "800",
+            "entity": "budget"
+          }
+        ],
+        "text": "looking for north indian food in ahmedabad for rs 800"
+      }
+    ],
+    "regex_features": [
+      {
+        "name": "email",
+        "pattern": "^([a-zA-Z0-9_]+)@([a-zA-Z0-9_]+).([a-zA-Z]{2,5})$"
+      },
+      {
+        "name": "greet",
+        "pattern": "hey[^\\s]*"
+      },
+      {
+        "name": "zipcode",
+        "pattern": "[0-9]{5}"
+      }
+    ],
+    "entity_synonyms": [
+      {
+        "value": "find",
+        "synonyms": [
+          "search",
+          "look",
+          "search for",
+          "look for",
+          "check out",
+          "find me",
+          "get me",
+          "show me",
+          "tell me",
+          "find for me",
+          "get for me",
+          "search for me",
+          "look around",
+          "look for me",
+          "i am looking for",
+          "i want to find",
+          "i want to search",
+          "please find",
+          "please search",
+          "please look"
+        ]
+      },
+      {
+        "value": "restaurant",
+        "synonyms": [
+          "restaurants",
+          "hotel",
+          "hotels",
+          "eatery",
+          "eateries",
+          "dhabas",
+          "place to eat",
+          "places to eat",
+          "food joint",
+          "food joints",
+          "mess",
+          "darshini"
+        ]
+      },
+      {
+        "value": "north indian",
+        "synonyms": [
+          "dhaba",
+          "North Indian",
+          "North indian",
+          "northindian",
+          "northindia",
+          "northern",
+          "punjabi",
+          "panjabi",
+          "dhaba type"
+        ]
+      },
+      {
+        "value": "chinese",
+        "synonyms": [
+          "Chinese",
+          "Chines",
+          "chines",
+          "East",
+          "Noodles",
+          "Fried Rice",
+          "Dimsum",
+          "momo",
+          "chopsuey",
+          "chinky"
+        ]
+      },
+      {
+        "value": "mexican",
+        "synonyms": [
+          "Mexican",
+          "maxican",
+          "Maxican",
+          "Mexica",
+          "maxica",
+          "Maxica",
+          "Mexicana"
+        ]
+      },
+      {
+        "value": "italian",
+        "synonyms": [
+          "Italian",
+          "itelian",
+          "Itelian",
+          "italia",
+          "Italia",
+          "itelia",
+          "Itelia",
+          "Italiana",
+          "Pizza"
+        ]
+      },
+      {
+        "value": "american",
+        "synonyms": [
+          "American",
+          "amarican",
+          "Amarican",
+          "amerikan",
+          "Amerikan",
+          "amrikan",
+          "Amrikan",
+          "americana",
+          "amerikana"
+        ]
+      },
+      {
+        "value": "south indian",
+        "synonyms": [
+          "South Indian",
+          "South indian",
+          "southindian",
+          "southindia",
+          "southie",
+          "southern",
+          "idly dosa type",
+          "dosa wosa",
+          "idly widly",
+          "deccani",
+          "andhra",
+          "chettinad",
+          "mallu",
+          "dakhin"
+        ]
+      },
+      {
+        "value": "bangalore",
+        "synonyms": [
+          "bengaluru",
+          "BLR",
+          "Jayanagar",
+          "JP Nagar",
+          "BTM",
+          "BTM Layout",
+          "Banashankari",
+          "HSR Layout",
+          "HSR",
+          "Chickpet",
+          "HAL",
+          "Silk Board",
+          "Marathalli",
+          "Indiranagar",
+          "Indira Nagar",
+          "Mahadevpura",
+          "Whitefield",
+          "Brookfields",
+          "Yelahanka",
+          "CV Raman Nagar",
+          "Kaggadaspura",
+          "Majestic",
+          "NICE Road",
+          "Cantonment Station",
+          "Yesvanthpur",
+          "Bangalore East",
+          "Bangalore West",
+          "Bangalore North",
+          "Bangalore South",
+          "Bengaluru East",
+          "Bengaluru West",
+          "Bengaluru North",
+          "Bengaluru South"
+        ]
+      },
+      {
+        "value": "chennai",
+        "synonyms": [
+          "madras",
+          "Nungambakkam",
+          "T Nagar",
+          "TNagar",
+          "Koyambedu",
+          "Anna Nagar",
+          "Mylapore",
+          "Mangadu",
+          "Poonamallee",
+          "Velachery",
+          "Palavakkam",
+          "Adyar",
+          "Cheromepet",
+          "Meenambakkam",
+          "Ramapuram",
+          "Lakshmipuram",
+          "Washermanpet",
+          "Medavakkam",
+          "Perumbakkam",
+          "SithalaPakkam",
+          "Thoraipakkam"
+        ]
+      },
+      {
+        "value": "delhi",
+        "synonyms": [
+          "New Delhi",
+          "dilli",
+          "Dilli",
+          "NewDelhi",
+          "Connought Place",
+          "Cannought Place",
+          "Pragati Maidan",
+          "Hauz Khas",
+          "Dhaula Kuan",
+          "GK",
+          "GK2",
+          "Greater Kailash",
+          "CR Park",
+          "Chittaranjan Park",
+          "Nehru Place",
+          "JNU",
+          "Chandni Chowk",
+          "Rohini",
+          "pitampura",
+          "bus adda",
+          "busadda",
+          "Chor Bazaar",
+          "Red Fort",
+          "Lal Qila",
+          "Lal Quila",
+          "Purana Quila",
+          "Purana Qila",
+          "Purani Dilli",
+          "Purana Dilli",
+          "Purani Delhi",
+          "Purana Delhi",
+          "Old Dilli",
+          "Old Delhi"
+        ]
+      },
+      {
+        "value": "hyderabad",
+        "synonyms": [
+          "hyd",
+          "hyderbad",
+          "Secunderabad",
+          "Jubilee Hills",
+          "Hitec City",
+          "Begumpet",
+          "Gachibowli",
+          "Golconda",
+          "Charminar",
+          "Medhipatnam",
+          "LB Nagar",
+          "Moula Ali",
+          "Nizampet",
+          "Nadergul"
+        ]
+      },
+      {
+        "value": "agra",
+        "synonyms": [
+          "agra fort",
+          "Taj Mahal",
+          "Dayal bagh",
+          "Dayalbagh",
+          "sikandara",
+          "lohamandi",
+          "sadar bazar",
+          "Tajganj",
+          "Rohta",
+          "Kahrai",
+          "Kachhpura",
+          "Dhandhupura"
+        ]
+      },
+      {
+        "value": "Ajmer",
+        "synonyms": [
+          "Hathi Khera",
+          "Kajipura",
+          "Ajmer Sharif",
+          "Ajmer dargah Sharif"
+        ]
+      },
+      {
+        "value": "ALIGARH",
+        "synonyms": [
+          "ali garh",
+          "aligar",
+          "AMU",
+          "Aligarh Muslim University",
+          "Chikaura",
+          "Ramghat Marg",
+          "Ramghat Road",
+          "Dhanipur"
+        ]
+      },
+      {
+        "value": "Allahabad",
+        "synonyms": [
+          "Prayagraj",
+          "Naini",
+          "Kareli",
+          "Khusro Bagh",
+          "Hatwa",
+          "Dhanuha",
+          "Baswar",
+          "Dandupur",
+          "Iradatganj",
+          "Champatpur",
+          "Jhusi",
+          "Naika",
+          "Triveni Sangam",
+          "TriveniSangam",
+          "Malviyanagar"
+        ]
+      },
+      {
+        "value": "Amravati",
+        "synonyms": [
+          "Wadali Garden",
+          "Changapur",
+          "Bamboo Udyan",
+          "VMV",
+          "Badnera"
+        ]
+      },
+      {
+        "value": "Amritsar",
+        "synonyms": [
+          "Amritsar Cantt",
+          "Harminder Sahib",
+          "Golden Temple",
+          "Sun City"
+        ]
+      },
+      {
+        "value": "Asansol",
+        "synonyms": [
+          "Burnpur",
+          "INA Memorial",
+          "Rabindra Park",
+          "ECL Central",
+          "Riverside Township"
+        ]
+      },
+      {
+        "value": "Aurangabad",
+        "synonyms": [
+          "CIDCO",
+          "Waluj",
+          "Chilkathana",
+          "Mukundwadi",
+          "Karnpura",
+          "Bibi Ka maqbara",
+          "Haj House"
+        ]
+      },
+      {
+        "value": "BAREILLY",
+        "synonyms": [
+          "bareli",
+          "bareilli",
+          "Izatnagar",
+          "Alakhnath Mandir",
+          "Kargaina",
+          "Dohra",
+          "Trivatinath Mandir"
+        ]
+      },
+      {
+        "value": "BELGAUM",
+        "synonyms": [
+          "belgaun",
+          "belgam",
+          "Belagavi",
+          "Hindalga",
+          "Mutenatti"
+        ]
+      },
+      {
+        "value": "Bhavnagar",
+        "synonyms": [
+          "Bhavanagar",
+          "Victoria Park Garden"
+        ]
+      },
+      {
+        "value": "Bhopal",
+        "synonyms": [
+          "Bheewandi",
+          "Kolwan",
+          "Manchester of India"
+        ]
+      },
+      {
+        "value": "kochi",
+        "synonyms": [
+          "cochin",
+          "Amravathy",
+          "Puthuvype Beach",
+          "Chellanam",
+          "Aroor",
+          "Maradu",
+          "Vyttila",
+          "Kaloor",
+          "Edapally",
+          "Panagad",
+          "Puthenkurish",
+          "Kakkanad",
+          "Kadamakuddy",
+          "Varapuzha",
+          "Eloor",
+          "Kalamassery"
+        ]
+      },
+      {
+        "value": "mumbai",
+        "synonyms": [
+          "Bombay",
+          "Dadar",
+          "Andheri",
+          "Bandra",
+          "Worli",
+          "Ban Stand",
+          "Haji Ali",
+          "Marine Drive",
+          "Queens Necklace",
+          "Amarons Garden",
+          "Hanging Garden",
+          "Mandai",
+          "Colaba",
+          "Kurla",
+          "Navi Mumbai",
+          "New Bombay",
+          "Navi Bombay",
+          "Malad",
+          "Kandivali",
+          "Borivali",
+          "Versova",
+          "Juhu",
+          "Mahim",
+          "Parel",
+          "Gateway of India"
+        ]
+      },
+      {
+        "value": "patna",
+        "synonyms": [
+          "patan",
+          "Danapur",
+          "Asapur",
+          "Jalalpur",
+          "Phulwari",
+          "Shekhpura",
+          "Rajendra Nagar",
+          "Kumhrar",
+          "Nagla",
+          "Gai Ghat",
+          "Boring Road",
+          "Ashok Rajpath Road",
+          "Kankarbagh",
+          "GardaniBagh"
+        ]
+      },
+      {
+        "value": "pune",
+        "synonyms": [
+          "Poona",
+          "Puna",
+          "Bhugaon",
+          "Sunarwadi",
+          "Narhe",
+          "Khadki",
+          "Sinhgad",
+          "Pisoli",
+          "Handewadi",
+          "Kondhwa",
+          "Wanowrie",
+          "Hadapsar",
+          "SP Infocity",
+          "Amanora",
+          "Viman Nagar",
+          "Yerwada",
+          "Gadital",
+          "Mundhwa",
+          "Ghorpadi",
+          "Dhanori",
+          "Lohgaon",
+          "Chokhi Dani"
+        ]
+      },
+      {
+        "value": "vijaywada",
+        "synonyms": [
+          "Govornorpet",
+          "Governerpet",
+          "Vijayawada",
+          "VMC",
+          "Bhavanipuram",
+          "Patamata",
+          "Gunadala",
+          "Sanath Nagar",
+          "Fraserpeta",
+          "Kabela",
+          "PNT Colony",
+          "Jojinagar",
+          "Madhura Nagar",
+          "Karmel Nagar",
+          "Vinchpet",
+          "Krishna Lanka",
+          "Krishnalanka",
+          "Murali Nagar",
+          "Enikepadu",
+          "Ramanagar"
+        ]
+      },
+      {
+        "value": "visakhapatnam",
+        "synonyms": [
+          "vizag",
+          "Kalpaka",
+          "Gopalapatnam",
+          "Peda Narava",
+          "Vishakapatnam",
+          "Visakapatnam",
+          "Dwarka Nagar",
+          "Siripuram",
+          "Daba Gardens",
+          "Rushikonda",
+          "Madhurawada",
+          "Bheemli"
+        ]
+      },
+      {
+        "value": "bhubaneswar",
+        "synonyms": [
+          "bhubaneshwar"
+        ]
+      },
+      {
+        "value": "bikaner",
+        "synonyms": [
+          "Bikaneri"
+        ]
+      },
+      {
+        "value": "bokaro",
+        "synonyms": [
+          "bokaro steel city"
+        ]
+      },
+      {
+        "value": "coimbatore",
+        "synonyms": [
+          "coambatore"
+        ]
+      },
+      {
+        "value": "cuttack",
+        "synonyms": [
+          "kuttack",
+          "cuttock"
+        ]
+      },
+      {
+        "value": "dehradun",
+        "synonyms": [
+          "dehradoon",
+          "dun"
+        ]
+      },
+      {
+        "value": "dhanbad",
+        "synonyms": [
+          "dhaanbaad",
+          "dhanbaad"
+        ]
+      },
+      {
+        "value": "durg",
+        "synonyms": [
+          "Bhilai Nagar",
+          "durg Bhilai Nagar"
+        ]
+      },
+      {
+        "value": "durgapur",
+        "synonyms": [
+          "durgapur steel city",
+          "AVB Colony",
+          "AVB Township",
+          "Benachitty",
+          "BidhanNagar"
+        ]
+      },
+      {
+        "value": "erode",
+        "synonyms": [
+          "Erodde"
+        ]
+      },
+      {
+        "value": "Faridabad",
+        "synonyms": [
+          "Faridabaad"
+        ]
+      },
+      {
+        "value": "Ghaziabad",
+        "synonyms": [
+          "Ghaziabaad"
+        ]
+      },
+      {
+        "value": "Gorakhpur",
+        "synonyms": [
+          "Gorakhpor"
+        ]
+      },
+      {
+        "value": "Gulbarga",
+        "synonyms": [
+          "Gulbargaa"
+        ]
+      },
+      {
+        "value": "Guntur",
+        "synonyms": [
+          "Guntoor"
+        ]
+      },
+      {
+        "value": "Gurgaon",
+        "synonyms": [
+          "Goregaon"
+        ]
+      },
+      {
+        "value": "Guwahati",
+        "synonyms": [
+          "gowhati",
+          "gowahati",
+          "gouhati"
+        ]
+      },
+      {
+        "value": "Gwalior",
+        "synonyms": [
+          "guwaliar"
+        ]
+      },
+      {
+        "value": "hubli",
+        "synonyms": [
+          "hubli dharwad",
+          "hubli-dharwad",
+          "dharwad"
+        ]
+      },
+      {
+        "value": "Indore",
+        "synonyms": [
+          "indoor",
+          "indor"
+        ]
+      },
+      {
+        "value": "Jabalpur",
+        "synonyms": [
+          "jabalpoor"
+        ]
+      },
+      {
+        "value": "Jaipur",
+        "synonyms": [
+          "jaipoor",
+          "pink city"
+        ]
+      },
+      {
+        "value": "Jalandhar",
+        "synonyms": [
+          "Jalaandhar"
+        ]
+      },
+      {
+        "value": "Jammu",
+        "synonyms": [
+          "Jamu"
+        ]
+      },
+      {
+        "value": "Jamnagar",
+        "synonyms": [
+          "Jamanagar",
+          "Jamnagar Oil refinery"
+        ]
+      },
+      {
+        "value": "Jamshedpur",
+        "synonyms": [
+          "Tata Nagar",
+          "TataNagar",
+          "Tata",
+          "Jubbilee park",
+          "Mango",
+          "Kodma",
+          "Bishtupur",
+          "Sonari",
+          "Sakchi"
+        ]
+      },
+      {
+        "value": "Jhansi",
+        "synonyms": [
+          "jansi",
+          "Janshi"
+        ]
+      },
+      {
+        "value": "Jodhpur",
+        "synonyms": [
+          "jodhpoor"
+        ]
+      },
+      {
+        "value": "Kannur",
+        "synonyms": [
+          "Kanoor",
+          "Kannoor",
+          "Kanur"
+        ]
+      },
+      {
+        "value": "Kanpur",
+        "synonyms": [
+          "Kanpoor"
+        ]
+      },
+      {
+        "value": "Kakinada",
+        "synonyms": [
+          "Kakinaada"
+        ]
+      },
+      {
+        "value": "Kochi",
+        "synonyms": [
+          "Kochy"
+        ]
+      },
+      {
+        "value": "Kottayam",
+        "synonyms": [
+          "Kotayam"
+        ]
+      },
+      {
+        "value": "Kolhapur",
+        "synonyms": [
+          "Kolapur",
+          "Kolhapoor"
+        ]
+      },
+      {
+        "value": "Kollam",
+        "synonyms": [
+          "Kolam"
+        ]
+      },
+      {
+        "value": "Kota",
+        "synonyms": [
+          "Kotta"
+        ]
+      },
+      {
+        "value": "Kozhikode",
+        "synonyms": [
+          "Kozhicode"
+        ]
+      },
+      {
+        "value": "Kurnool",
+        "synonyms": [
+          "kurnul"
+        ]
+      },
+      {
+        "value": "Lucknow",
+        "synonyms": [
+          "Lucnow"
+        ]
+      },
+      {
+        "value": "Ludhiana",
+        "synonyms": [
+          "Ludiana"
+        ]
+      },
+      {
+        "value": "Madurai",
+        "synonyms": [
+          "Madoorai"
+        ]
+      },
+      {
+        "value": "Mathura",
+        "synonyms": [
+          "Vrindavan"
+        ]
+      },
+      {
+        "value": "Malappuram",
+        "synonyms": [
+          "mammaapuram",
+          "malapuram",
+          "mamapuram"
+        ]
+      },
+      {
+        "value": "Mangalore",
+        "synonyms": [
+          "Mangaluru"
+        ]
+      },
+      {
+        "value": "Meerut",
+        "synonyms": [
+          "Meeratha",
+          "Miratha",
+          "Meeruth"
+        ]
+      },
+      {
+        "value": "Goa",
+        "synonyms": [
+          "North Goa",
+          "South Goa",
+          "calingute",
+          "Anjuna",
+          "Colva",
+          "Panaji",
+          "Margao",
+          "Vasco da Gama"
+        ]
+      },
+      {
+        "value": "Nagpur",
+        "synonyms": [
+          "Nagpoor",
+          "Wadi",
+          "Pipla",
+          "Nandanvan",
+          "Vanjari"
+        ]
+      },
+      {
+        "value": "Nanded",
+        "synonyms": [
+          "Nandid",
+          "nunded",
+          "naanded"
+        ]
+      },
+      {
+        "value": "Nashik",
+        "synonyms": [
+          "Nasik"
+        ]
+      },
+      {
+        "value": "Nellore",
+        "synonyms": [
+          "Nelore",
+          "Nilor",
+          "Nellor"
+        ]
+      },
+      {
+        "value": "Noida",
+        "synonyms": [
+          "Noida NCR"
+        ]
+      },
+      {
+        "value": "Pallakad",
+        "synonyms": [
+          "Palakad"
+        ]
+      },
+      {
+        "value": "Pondicherry",
+        "synonyms": [
+          "Puducherry"
+        ]
+      },
+      {
+        "value": "Moradabad",
+        "synonyms": [
+          "Mooradabad"
+        ]
+      },
+      {
+        "value": "Raipur",
+        "synonyms": [
+          "Raypur",
+          "Raypoor",
+          "Raipoor"
+        ]
+      },
+      {
+        "value": "Rajkot",
+        "synonyms": [
+          "Bhakti Nagar",
+          "Mavdi",
+          "Ronki"
+        ]
+      },
+      {
+        "value": "Rajahmundry",
+        "synonyms": [
+          "Rajamundry",
+          "Rajamundri",
+          "Rajahmundri",
+          "Rajmundri",
+          "Rajmundry"
+        ]
+      },
+      {
+        "value": "Ranchi",
+        "synonyms": [
+          "Ranchy",
+          "Kanke",
+          "Radium Road",
+          "Lalpur",
+          "Doranda",
+          "Shaheed Chowk"
+        ]
+      },
+      {
+        "value": "Rourkela",
+        "synonyms": [
+          "Rorkela"
+        ]
+      },
+      {
+        "value": "Sangli",
+        "synonyms": [
+          "Sangali"
+        ]
+      },
+      {
+        "value": "Siliguri",
+        "synonyms": [
+          "Shiliguri"
+        ]
+      },
+      {
+        "value": "Solapur",
+        "synonyms": [
+          "Solapoor"
+        ]
+      },
+      {
+        "value": "Srinagar",
+        "synonyms": [
+          "Sri Nagar"
+        ]
+      },
+      {
+        "value": "Sultanpur",
+        "synonyms": [
+          "Sultanpoor"
+        ]
+      },
+      {
+        "value": "Surat",
+        "synonyms": [
+          "Surath"
+        ]
+      },
+      {
+        "value": "Thiruvananthapuram",
+        "synonyms": [
+          "Thiruvananthpuram",
+          "Thiruvananthapooram",
+          "Tiruvananthapuram",
+          "Tiruvanantapuram"
+        ]
+      },
+      {
+        "value": "Thrissur",
+        "synonyms": [
+          "trisssur"
+        ]
+      },
+      {
+        "value": "Thiruchapalli",
+        "synonyms": [
+          "Thiruchanapalli",
+          "TIRUCHIRAPPALLI",
+          "Tiruchanapalli",
+          "Thiruchanapali"
+        ]
+      },
+      {
+        "value": "Tiruppur",
+        "synonyms": [
+          "tirupur"
+        ]
+      },
+      {
+        "value": "Ujjain",
+        "synonyms": [
+          "Ujain"
+        ]
+      },
+      {
+        "value": "Vijayapura",
+        "synonyms": [
+          "vijaypura"
+        ]
+      },
+      {
+        "value": "Vadodara",
+        "synonyms": [
+          "vadodra"
+        ]
+      },
+      {
+        "value": "Varanasi",
+        "synonyms": [
+          "Benaras"
+        ]
+      },
+      {
+        "value": "Warangal",
+        "synonyms": [
+          "waranagal"
+        ]
+      },
+      {
+        "value": "Ahmedabad",
+        "synonyms": [
+          "Ahmedabaad"
+        ]
+      },
+      {
+        "value": "Lesser than Rs. 300",
+        "synonyms": [
+          "Lesser than 300",
+          "Less than 300",
+          "Below 300",
+          "Not more than 200",
+          "Not more than 100",
+          "Kepp below 300",
+          "Keep it low",
+          "Not costly",
+          "low cost",
+          "Low prices"
+        ]
+      },
+      {
+        "value": "Rs. 300 to 700",
+        "synonyms": [
+          "300 to 700",
+          "In the range of 300 to 700",
+          "Not cheap",
+          "Not low",
+          "Medium price",
+          "Medium prices",
+          "Keep it medium",
+          "Not very costly",
+          "Average cost",
+          "Keep it average"
+        ]
+      },
+      {
+        "value": "More than 700",
+        "synonyms": [
+          "High priced",
+          "High prices",
+          "Above 700",
+          "Beyond 700",
+          "More than 1000",
+          "More than 2000",
+          "Kepp above 700",
+          "Keep it high",
+          "Best prices",
+          "Very costly",
+          "High cost"
+        ]
+      }
+    ]
+  }
+}

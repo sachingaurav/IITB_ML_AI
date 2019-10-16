@@ -1,0 +1,131 @@
+action_factory: null
+action_names:
+- utter_greet
+- utter_goodbye
+- utter_default
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_ask_cuisine
+- utter_ask_budget
+- utter_ask_email_confirmation
+- utter_ask_email
+- utter_unsupported_location
+- utter_unsupported_cuisine
+- action_multiple_input
+- action_send_email
+- action_confirm_email_prompt
+- action_process_budget
+- action_validate_location
+- action_validate_cuisine
+- action_search_restaurant
+- action_wipe_data
+actions:
+- utter_greet
+- utter_goodbye
+- utter_default
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_ask_cuisine
+- utter_ask_budget
+- utter_ask_email_confirmation
+- utter_ask_email
+- utter_unsupported_location
+- utter_unsupported_cuisine
+- actions.ActionProcessMultipleInput
+- actions.ActionSendEmail
+- actions.ActionConfirmEmailPrompt
+- actions.ActionProcessBudget
+- actions.ActionValidateLocation
+- actions.ActionValidateCuisine
+- actions.ActionSearchRestaurants
+- actions.ActionWipeData
+config:
+  store_entities_as_slots: true
+entities:
+- location
+- cuisine
+- budget
+- email
+intents:
+- greet
+- goodbye
+- thankyou
+- location_prompt
+- cuisine_prompt
+- budget_prompt
+- confirm_email_prompt
+- email_fetch
+- restaurant_search
+slots:
+  budget:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  confirm_email_prompt:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  cuisine:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  do_send_email:
+    initial_value: null
+    type: rasa_core.slots.BooleanSlot
+  email:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  email_data:
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  location:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_ask_budget:
+  - buttons:
+    - payload: Low
+      title: Lesser than Rs. 300
+    - payload: Medium
+      title: Rs. 300 to 700
+    - payload: High
+      title: More than 700
+    text: What is your budget for two people? (low/medium/high)
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: American
+      title: American
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: What kind of cuisine would you like? (supported list below)
+  utter_ask_email:
+  - text: Please enter your email id.
+  utter_ask_email_confirmation:
+  - text: Do you want to get top 10 results by email? (yes/no)
+  utter_ask_howcanhelp:
+  - text: How can I help you?
+  utter_ask_location:
+  - text: What is your preferred location? (Enter as 'In <Location>')
+  - text: Where would have your meal? (Enter as 'In <Location>')
+  - text: What locality would you prefer? (Enter as 'In <Location>')
+  - text: Where should I recommend the location? (Enter as 'In <Location>')
+  utter_default:
+  - text: This bot can help you find restaurants.
+  utter_goodbye:
+  - text: Good Bye :(
+  - text: Bye-Bye
+  - text: Good Bye. Enjoy your day.
+  - text: Good Bye. See you soon.
+  utter_greet:
+  - text: Hey there! How may I help you?
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today?
+  utter_unsupported_cuisine:
+  - text: We do not support this cuisine yet.
+  utter_unsupported_location:
+  - text: We do not operate in this area yet.

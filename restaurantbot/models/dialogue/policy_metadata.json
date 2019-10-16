@@ -1,0 +1,69 @@
+{
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": [
+        "confirm_email_prompt",
+        "location",
+        "cuisine",
+        "email",
+        "budget"
+      ]
+    },
+    "action_multiple_input": {
+      "slots": [
+        "location",
+        "cuisine",
+        "budget"
+      ]
+    },
+    "action_process_budget": {
+      "slots": [
+        "budget"
+      ]
+    },
+    "action_search_restaurant": {
+      "slots": [
+        "email_data"
+      ]
+    },
+    "action_confirm_email_prompt": {
+      "slots": [
+        "do_send_email"
+      ]
+    },
+    "action_wipe_data": {
+      "slots": [
+        "confirm_email_prompt",
+        "do_send_email",
+        "email_data",
+        "location",
+        "cuisine",
+        "email",
+        "budget"
+      ]
+    },
+    "utter_goodbye": {
+      "slots": []
+    },
+    "action_validate_location": {
+      "slots": [
+        "location"
+      ]
+    },
+    "action_validate_cuisine": {
+      "slots": [
+        "cuisine"
+      ]
+    }
+  },
+  "rasa_core": "0.10.1",
+  "max_histories": [
+    8,
+    8
+  ],
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.keras_policy.KerasPolicy"
+  ]
+}

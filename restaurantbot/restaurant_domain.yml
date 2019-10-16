@@ -1,0 +1,105 @@
+slots:
+  location:
+    type: text
+  cuisine:
+    type: text
+  budget:
+    type: text
+  confirm_email_prompt:
+    type: text
+  do_send_email:
+    type: bool
+  email:
+    type: text
+  email_data:
+    type: list
+
+entities:
+- location
+- cuisine
+- budget
+- email
+
+intents:
+ - greet
+ - goodbye
+ - thankyou
+ - location_prompt
+ - cuisine_prompt
+ - budget_prompt
+ - confirm_email_prompt
+ - email_fetch
+ - restaurant_search
+
+templates:
+  utter_greet:
+    - "Hey there! How may I help you?"
+    - "Hi, How can I help you!"
+    - "Hey, How is it going. How May I help you Today?"
+  utter_goodbye:
+    - "Good Bye :("
+    - "Bye-Bye"
+    - "Good Bye. Enjoy your day."
+    - "Good Bye. See you soon."
+  utter_ask_howcanhelp:
+    - "How can I help you?"
+  utter_ask_location:
+    - "What is your preferred location? (Enter as 'In <Location>')"
+    - "Where would have your meal? (Enter as 'In <Location>')"
+    - "What locality would you prefer? (Enter as 'In <Location>')"
+    - "Where should I recommend the location? (Enter as 'In <Location>')"
+  utter_ask_cuisine:
+    - text: "What kind of cuisine would you like? (supported list below)"
+      buttons:
+      - title: "Chinese"
+        payload: "Chinese"
+      - title: "American"
+        payload: "American"
+      - title: "Mexican"
+        payload: "Mexican"
+      - title: "Italian"
+        payload: "Italian"
+      - title: "South Indian"
+        payload: "South Indian"
+      - title: "North Indian"
+        payload: "North Indian"
+  utter_ask_budget:
+    - text: "What is your budget for two people? (low/medium/high)"
+      buttons:
+      - title: "Lesser than Rs. 300"
+        payload: "Low"
+      - title: "Rs. 300 to 700"
+        payload: "Medium"
+      - title: "More than 700"
+        payload: "High"
+  utter_ask_email_confirmation:
+    - text: "Do you want to get top 10 results by email? (yes/no)"
+  utter_ask_email:
+    - text: "Please enter your email id."
+  utter_unsupported_location:
+    - text: "We do not operate in this area yet."
+  utter_unsupported_cuisine:
+    - text: "We do not support this cuisine yet."
+  utter_default:
+    - text: "This bot can help you find restaurants."
+
+actions:
+- utter_greet
+- utter_goodbye
+- utter_default
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_ask_cuisine
+- utter_ask_budget
+- utter_ask_email_confirmation
+- utter_ask_email
+- utter_unsupported_location
+- utter_unsupported_cuisine
+- actions.ActionProcessMultipleInput
+- actions.ActionSendEmail
+- actions.ActionConfirmEmailPrompt
+- actions.ActionProcessBudget
+- actions.ActionValidateLocation
+- actions.ActionValidateCuisine
+- actions.ActionSearchRestaurants
+- actions.ActionWipeData

@@ -1,0 +1,166 @@
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git pull
+remote: Enumerating objects: 44, done.
+remote: Counting objects: 100% (44/44), done.
+remote: Compressing objects: 100% (28/28), done.
+remote: Total 35 (delta 21), reused 15 (delta 7)
+Unpacking objects: 100% (35/35), done.
+From https://gitlab.com/atulkumar2/restaurantbot
+   6d2db28..4ea483b  master     -> origin/master
+error: Your local changes to the following files would be overwritten by merge:
+        actions.py
+        data/stories.md
+        restaurant_domain.yml
+        zomatopy.py
+Please commit your changes or stash them before you merge.
+Aborting
+Updating 6d2db28..4ea483b
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git checkout stories.md
+error: pathspec 'stories.md' did not match any file(s) known to git
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git checkout data/stories.md
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git checkout action.py
+error: pathspec 'action.py' did not match any file(s) known to git
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git checkout actions.py
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git checkout restaurant_domain.yaml
+error: pathspec 'restaurant_domain.yaml' did not match any file(s) known to git
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git checkout restaurant_domain.yml
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git checkout zomatopy.py
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git pull
+Updating 6d2db28..4ea483b
+Fast-forward
+ .gitignore            |   1 +
+ README.md             |  36 ++++++++++++--
+ actions.py            | 132 ++++++++++++++++++++++++++++++++++++++++----------
+ data/stories.md       |  22 ++++++++-
+ restaurant_domain.yml |  10 +++-
+ train_online.py       |   6 ++-
+ zomatopy.py           |   2 +-
+ 7 files changed, 175 insertions(+), 34 deletions(-)
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        stories.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   actions.py
+        modified:   data/stories.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git diff action.py
+fatal: ambiguous argument 'action.py': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git diff actions.py
+diff --git a/actions.py b/actions.py
+index c98f663..36c9638 100644
+--- a/actions.py
++++ b/actions.py
+@@ -133,4 +133,5 @@ class ActionValidateLocation(Action):
+             dispatcher.utter_message("We do not operate in that area yet.")
+             return []
+         else:
++            dispatcher.utter_message("")
+             return [SlotSet('location',loc)]
+\ No newline at end of file
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>q
+'q' is not recognized as an internal or external command,
+operable program or batch file.
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>q
+'q' is not recognized as an internal or external command,
+operable program or batch file.
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git add actions.py
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git add data/stories.md
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   actions.py
+        modified:   data/stories.md
+
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git commit -m "Sachin's Commit"
+[master 37de4cd] Sachin's Commit
+ Committer: Sachin.Srivastava <Sachin.Srivastava@target.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 11 insertions(+)
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 566 bytes | 188.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0)
+To https://gitlab.com/atulkumar2/restaurantbot.git
+   4ea483b..37de4cd  master -> master
+
+(base) C:\Users\Z001MC7\Downloads\restaurantbot>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
